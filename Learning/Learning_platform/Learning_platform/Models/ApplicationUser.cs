@@ -6,8 +6,7 @@ namespace Learning_platform.Models
     public class ApplicationUser : IdentityUser
     {
         [Required]
-        public string Image { get; set; }
-
+        public string? Image { get; set; }
 
         public int? PasswordResetPin { get; set; } = null;
 

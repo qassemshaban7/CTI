@@ -116,14 +116,14 @@ namespace Learning_platform.Migrations
                         {
                             Id = "1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "8c5cf296-5b93-45d6-a3d3-73fb88f27abd",
+                            ConcurrencyStamp = "9ede9808-569c-4784-b950-f6118cc9caa5",
                             Email = "admin@example.com",
                             EmailConfirmed = true,
                             Image = "adminphoto",
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@EXAMPLE.COM",
                             NormalizedUserName = "Admin",
-                            PasswordHash = "AQAAAAIAAYagAAAAELZBtmRdmv8IrORuTyIfX4lSmcO0vyGirt32pbaS7SlMtHgi+HLQIi2j+LI79lh5xQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEIygri5V5gFXY6KrTW5ClzfHSMQyksEgDBaIt6iAdOXccw5RXPzG5WgEWgn39QuUVQ==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -286,15 +286,15 @@ namespace Learning_platform.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "1657a281-ce2c-4ffd-b257-b7b93d7d54a4",
-                            ConcurrencyStamp = "34fafccb-12ae-41e0-b07f-727c4d900212",
+                            Id = "6d078a4e-4951-460b-90b9-a8410e932477",
+                            ConcurrencyStamp = "c177aea6-4c1f-45dd-870a-2f6326394975",
                             Name = "User",
                             NormalizedName = "user"
                         },
                         new
                         {
                             Id = "2",
-                            ConcurrencyStamp = "5801fde7-57d6-45eb-b03d-1003f5f1dba5",
+                            ConcurrencyStamp = "2804a6ba-e0d7-44ee-99df-d6db7601cd9e",
                             Name = "Admin",
                             NormalizedName = "admin"
                         });

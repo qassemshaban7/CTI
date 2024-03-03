@@ -42,7 +42,7 @@ namespace Learning_platform.Controllers
                 //save
                 ApplicationUser user = new ApplicationUser();
                 user.Email = userDto.Email;
-                user.UserName = userDto.Email.Split("@")[0];
+                user.UserName = userDto.userName;
                 if(await usermanager.FindByEmailAsync(userDto.Email) is not null)
                 {
                     return BadRequest("User already exists!");
@@ -88,7 +88,6 @@ namespace Learning_platform.Controllers
             }
             return BadRequest(ModelState);
         }
-
         [HttpPost("login")]//api/account/login
         public async Task<IActionResult> Login(LoginUserDto userDto)
         {
@@ -104,7 +103,8 @@ namespace Learning_platform.Controllers
                         //Claims Token
                         var claims = new List<Claim>();
                         claims.Add(new Claim(ClaimTypes.Email, user.Email));
-                        claims.Add(new Claim(ClaimTypes.Name, user.Image));
+                        claims.Add(new Claim(ClaimTypes.Name, user.UserName)); 
+                        claims.Add(new Claim("Image", user.Image));
                         claims.Add(new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()));
 
                         //get role
@@ -124,16 +124,22 @@ namespace Learning_platform.Controllers
                             claims: claims,
                             signingCredentials: new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256)
                             );
-                        return Ok(new
+
+                        var response = new
                         {
                             token = new JwtSecurityTokenHandler().WriteToken(mytoken),
-                            expiration = mytoken.ValidTo
-                        });
+                            expiration = mytoken.ValidTo,
+                            email = user.Email,
+                            userName = user.UserName,
+                            image = $"images/{user.Image}"
+
+                        };
+
+                        return Ok(response);
                     }
                     return Ok("Email or password are invalid");
                 }
                 return Unauthorized();
-
             }
             return BadRequest();
         }
@@ -185,6 +191,15 @@ namespace Learning_platform.Controllers
             await usermanager.UpdateAsync(user);
             return Ok();
         }
-
+        [HttpPost("check_code")]
+        public async Task<IActionResult> CheckCode(CheckCodeDto model)  
+        {
+            if (!ModelState.IsValid) return BadRequest();
+            var user = await usermanager.FindByEmailAsync(model.Email);
+            if (user is null || user.ResetExpires is null
+               || user.ResetExpires < DateTime.Now || user.PasswordResetPin != model.pin)
+                return BadRequest(new {message =  "Invalid Token!"});
+            return Ok(new { message = "Valid Token." });
+        }
     }
 }
