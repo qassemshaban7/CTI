@@ -1,0 +1,90 @@
+﻿@page
+@model LoginModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en" dir="rtl" class="rtl">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Meta -->
+    <meta name="description" content="Archieving System">
+    <meta name="author" content="Ehab">
+
+    <title>نظام ادارة بسطتهالك</title>
+
+    <!-- vendor css -->
+    <link href="~/lib/%40fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+    @*<link href="~/lib/ionicons/css/ionicons.min.css" rel="stylesheet">*@
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link href="~/lib/rickshaw/rickshaw.min.css" rel="stylesheet">
+
+    <!-- Bracket CSS -->
+    <link rel="stylesheet" href="~/css/bracket.css">
+</head>
+
+<body>
+
+    <div class="row no-gutters flex-row-reverse ht-100v">
+        <div class="col-md-6 bg-gray-200 d-flex align-items-center justify-content-center">
+            <div class="login-wrapper wd-250 wd-xl-350 mg-y-30">
+                <div class=" d-flex justify-content-center mb-2">
+                    <img src="~/img/logo.png" class="img-thumbnail" />
+                </div>
+                
+                <h3 class="tx-inverse tx-center">تسجيل الدخول</h3>
+                <p class="tx-center mg-b-20">مرحبا بك في نظام ادارة بسطتهالك</p>
+
+                <form class="text-left" id="account" method="post">
+                    
+                    <div class="form-group">
+                        <input asp-for="Input.UserName" class="form-control" autocomplete="username" aria-required="true" placeholder="اسم المستخدم" required />
+@*                        <label asp-for="Input.UserName" class="form-label">اسم المستخدم</label>
+*@                        <span asp-validation-for="Input.UserName" class="text-danger"></span>
+                    </div><!-- form-group -->
+                    <div class="form-group">
+                        <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="كلمة المرور" required />
+@*                        <label asp-for="Input.Password" class="form-label">كلمة المرور</label>
+*@                        <span asp-validation-for="Input.Password" class="text-danger"></span>
+                    </div><!-- form-group -->
+                    <div class="form-group">
+                        <input class="form-check-input " asp-for="Input.RememberMe" />
+                        <label asp-for="Input.RememberMe " class="form-label mr-3">
+                        @Html.DisplayNameFor(m => m.Input.RememberMe)
+                        </label>
+                    </div>
+                    <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+                    <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-primary">دخول</button>
+                </form>
+               
+            </div><!-- login-wrapper -->
+        </div><!-- col -->
+        <div class="col-md-6 bg-br-primary d-flex align-items-center justify-content-center">
+            <div class="wd-250 wd-xl-450 mg-y-30">
+                <div class="signin-logo tx-28 tx-bold tx-white"><span class="tx-normal">نظام  ادارة بسطتهالك</span></div>
+@*                <div class="tx-white mg-b-60">الكلية التقنية للاتصالات والمعلومات </div>
+*@
+
+@*                <h5 class="tx-white">عن البرنامج</h5>
+*@@*                <p class="tx-white-6">يمكنك استخدام الموقع  لطباعة الخدمات إلكترونيًا. يمكنك اتباع الخطوات الموضحة في الموقع لطباعة الخدمات في أجهزة الحاسوب التي تعمل بنظام تشغيل ويندوز أو الماك.  .</p>
+*@            </div><!-- wd-500 -->
+        </div>
+    </div><!-- row -->
+
+    <script src="~/lib/jquery/jquery.min.js"></script>
+    <script src="~/lib/jquery-ui/ui/widgets/datepicker.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- END PAGE LEVEL SCRIPTS -->
+</body>
+
+</html>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
