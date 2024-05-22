@@ -1,0 +1,108 @@
+﻿@model CTI.ViewModels.SuperAdminHomeVM
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="br-pagetitle">
+    <i class="icon fas fa-light fa-house"></i>
+    <div>
+        <h4>الرئيسية</h4>
+        <p class="mg-b-0">نظام استبانات المتدربين</p>
+    </div>
+</div><!-- d-flex -->
+<div class="br-pagebody">
+    <div class="row row-sm">
+
+
+        <div class="col-sm-4 col-xl-4 mb-3">
+            <a asp-action="Index" asp-controller="Trainee">
+                <div class="bg-primary rounded overflow-hidden">
+                    <div class="pd-x-20 pd-t-20 d-flex align-items-center">
+                        <i class="fas fa-users tx-60 lh-0 tx-white op-7"></i>
+                        <div class="mg-r-20">
+                            <p class="tx-20 tx-spacing-1 tx-mont tx-bold tx-uppercase tx-white-8 mg-b-10">قائمة المتدربين</p>
+                            <p class="tx-24 tx-white tx-lato tx-bold mg-b-0 lh-1">@Model.Trainee.Count()</p>
+                        </div>
+                    </div>
+                    <div id="ch1" class="ht-50 tr-y-1"></div>
+                </div>
+            </a>
+        </div><!-- col-3 -->
+        <div class="col-sm-4 col-xl-4 mb-3">
+            <a asp-action="Index" asp-controller="Trainer">
+                <div class="bg-success rounded overflow-hidden">
+                    <div class="pd-x-20 pd-t-20 d-flex align-items-center">
+                        <i class="fas fa-chalkboard-teacher tx-60 lh-0 tx-white op-7"></i>
+                        <div class="mg-r-20">
+                            <p class="tx-20 tx-spacing-1 tx-mont tx-bold tx-uppercase tx-white-8 mg-b-10">قائمة المدربين</p>
+                            <p class="tx-24 tx-white tx-lato tx-bold mg-b-0 lh-1">@Model.Trainer.Count()</p>
+                        </div>
+                    </div>
+                    <div id="ch1" class="ht-50 tr-y-1"></div>
+                </div>
+            </a>
+        </div><!-- col-3 -->
+        <div class="col-sm-4 col-xl-4 mb-3">
+            <a asp-action="Index" asp-controller="Course">
+                <div class="bg-warning rounded overflow-hidden">
+                    <div class="pd-x-20 pd-t-20 d-flex align-items-center">
+                        <i class="fas fa-book tx-60 lh-0 tx-white op-7"></i>
+                        <div class="mg-r-20">
+                            <p class="tx-20 tx-spacing-1 tx-mont tx-bold tx-uppercase tx-white-8 mg-b-10">قائمة المقررات</p>
+                            <p class="tx-24 tx-white tx-lato tx-bold mg-b-0 lh-1">@Model.Courses.Count()</p>
+                        </div>
+                    </div>
+                    <div id="ch1" class="ht-50 tr-y-1"></div>
+                </div>
+            </a>
+        </div><!-- col-3 -->
+        <div class="col-sm-4 col-xl-4 mb-3">
+            <a asp-action="Index" asp-controller="TraineeCourse">
+                <div class="bg-purple rounded overflow-hidden">
+                    <div class="pd-x-20 pd-t-20 d-flex align-items-center">
+                        <i class="fas fa-user-graduate tx-60 lh-0 tx-white op-7"></i>
+                        <div class="mg-r-20">
+                            <p class="tx-20 tx-spacing-1 tx-mont tx-bold tx-uppercase tx-white-8 mg-b-10">المقررات والمتدربين</p>
+                            <p class="tx-24 tx-white tx-lato tx-bold mg-b-0 lh-1">@Model.TraineeCourse.Count()</p>
+                        </div>
+                    </div>
+                    <div id="ch1" class="ht-50 tr-y-1"></div>
+                </div>
+            </a>
+        </div><!-- col-3 -->
+        <div class="col-sm-4 col-xl-4 mb-3">
+            <a asp-action="Index" asp-controller="TrainerCourse">
+                <div class="bg-danger rounded overflow-hidden">
+                    <div class="pd-x-20 pd-t-20 d-flex align-items-center">
+                        <i class="fas fa-chalkboard tx-60 lh-0 tx-white op-7"></i>
+                        <div class="mg-r-20">
+                            <p class="tx-20 tx-spacing-1 tx-mont tx-bold tx-uppercase tx-white-8 mg-b-10">المقررات والمدربين</p>
+                            <p class="tx-24 tx-white tx-lato tx-bold mg-b-0 lh-1">@Model.TrainerCourse.Count()</p>
+                        </div>
+                    </div>
+                    <div id="ch1" class="ht-50 tr-y-1"></div>
+                </div>
+            </a>
+        </div><!-- col-3 -->
+        <div class="col-sm-4 col-xl-4 mb-3">
+            <a asp-action="Index" asp-controller="Surveys">
+                <div class="bg-primary rounded overflow-hidden">
+                    <div class="pd-x-20 pd-t-20 d-flex align-items-center">
+                        <i class="fas fa-poll tx-60 lh-0 tx-white op-7"></i>
+                        <div class="mg-r-20">
+                            <p class="tx-20 tx-spacing-1 tx-mont tx-bold tx-uppercase tx-white-8 mg-b-10">قائمة الاستبيانات</p>
+                            <p class="tx-24 tx-white tx-lato tx-bold mg-b-0 lh-1">@Model.Surveys.Count()</p>
+                        </div>
+                    </div>
+                    <div id="ch1" class="ht-50 tr-y-1"></div>
+                </div>
+            </a>
+        </div><!-- col-3 -->
+
+
+
+
+    </div><!-- row 
+    </div><!-- br-pagebody -->
+</div>

@@ -1,0 +1,68 @@
+﻿@model CTI.ViewModels.SuperAdminHomeVM
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Trainee/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="br-pagetitle">
+    <i class="icon fas fa-light fa-house"></i>
+    <div>
+        <h4>الرئيسية</h4>
+        <p class="mg-b-0">نظام ادارة بسطتهالك</p>
+    </div>
+</div><!-- d-flex -->
+
+<div class="br-pagebody">
+    <div class="row row-sm">
+       @*  @if (ViewBag.ThisUser.IsAdmin == 1)
+        {
+            <div class="col-sm-3 col-xl-3 mb-3">
+                <a asp-action="Index" asp-controller="MediaUsers">
+                    <div class="bg-purple rounded overflow-hidden">
+                        <div class="pd-x-20 pd-t-20 d-flex align-items-center">
+                            <i class="fas fa-light fa-user tx-60 lh-0 tx-white op-7"></i>
+                            <div class="mg-r-20">
+                                <p class="tx-20 tx-spacing-1 tx-mont tx-bold tx-uppercase tx-white-8 mg-b-10">فريق الميديا</p>
+                                <p class="tx-24 tx-white tx-lato tx-bold mg-b-0 lh-1">@Model.MediaTeam.Count()</p>
+                            </div>
+                        </div>
+                        <div id="ch1" class="ht-50 tr-y-1"></div>
+                    </div>
+                </a>
+            </div>
+        }
+        <!-- col-3 -->
+        <div class="col-sm-3 col-xl-3 mb-3">
+            <a asp-action="Index" asp-controller="File">
+                <div class="bg-info rounded overflow-hidden">
+                    <div class="pd-x-20 pd-t-20 d-flex align-items-center">
+                        <i class="fas fa-light fa-file-word tx-60 lh-0 tx-white op-7"></i>
+                        <div class="mg-r-20">
+                            <p class="tx-20 tx-spacing-1 tx-mont tx-bold tx-uppercase tx-white-8 mg-b-10">المواد العلمية</p>
+                            <p class="tx-24 tx-white tx-lato tx-bold mg-b-0 lh-1">@ViewBag.accCounter</p>
+                        </div>
+                    </div>
+                    <div id="ch1" class="ht-50 tr-y-1"></div>
+                </div>
+            </a>
+        </div><!-- col-3 -->
+        <div class="col-sm-3 col-xl-3 mb-3">
+            <a asp-action="Index" asp-controller="PDF">
+                <div class="bg-info rounded overflow-hidden">
+                    <div class="pd-x-20 pd-t-20 d-flex align-items-center">
+                        <i class="far fa-file-pdf tx-60 lh-0 tx-white op-7"></i>
+                        <div class="mg-r-20">
+                            <p class="tx-20 tx-spacing-1 tx-mont tx-bold tx-uppercase tx-white-8 mg-b-10">الملفات</p>
+                            <p class="tx-24 tx-white tx-lato tx-bold mg-b-0 lh-1">@ViewBag.pdf</p>
+                        </div>
+                    </div>
+                    <div id="ch1" class="ht-50 tr-y-1"></div>
+                </div>
+            </a>
+        </div><!-- col-3 --> *@
+
+    </div><!-- row -->
+
+
+</div><!-- br-pagebody -->

@@ -5,8 +5,56 @@
       "PackagePath": "staticwebassets\\CTI.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\KING\\My-GitHub\\CTI\\CTI\\CTI\\wwwroot\\CoursesFiles\\2d65cd57-7f6c-4e67-9ca5-49a08d416aa5_المقررات.xlsx",
+      "PackagePath": "staticwebassets\\CoursesFiles\\2d65cd57-7f6c-4e67-9ca5-49a08d416aa5_المقررات.xlsx"
+    },
+    {
+      "Id": "C:\\Users\\KING\\My-GitHub\\CTI\\CTI\\CTI\\wwwroot\\CoursesFiles\\d1319d05-2dd0-4d99-b36c-ef18aab915c6_المقررات.xlsx",
+      "PackagePath": "staticwebassets\\CoursesFiles\\d1319d05-2dd0-4d99-b36c-ef18aab915c6_المقررات.xlsx"
+    },
+    {
       "Id": "C:\\Users\\KING\\My-GitHub\\CTI\\CTI\\CTI\\wwwroot\\OIP.jpeg",
       "PackagePath": "staticwebassets\\OIP.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\KING\\My-GitHub\\CTI\\CTI\\CTI\\wwwroot\\TraineeCoursesFiles\\1ca0ae32-1c31-4d88-b555-cc245d165f09_مثال اضافة المقررات للمدربين.xlsx",
+      "PackagePath": "staticwebassets\\TraineeCoursesFiles\\1ca0ae32-1c31-4d88-b555-cc245d165f09_مثال اضافة المقررات للمدربين.xlsx"
+    },
+    {
+      "Id": "C:\\Users\\KING\\My-GitHub\\CTI\\CTI\\CTI\\wwwroot\\TraineeCoursesFiles\\c26ad31a-8e69-44a1-8348-a7bcec0eb458_مثال اضافة المقررات للمتدربين.xlsx",
+      "PackagePath": "staticwebassets\\TraineeCoursesFiles\\c26ad31a-8e69-44a1-8348-a7bcec0eb458_مثال اضافة المقررات للمتدربين.xlsx"
+    },
+    {
+      "Id": "C:\\Users\\KING\\My-GitHub\\CTI\\CTI\\CTI\\wwwroot\\TraineeCoursesFiles\\e77cca1e-67de-47a6-b33a-fa44a66622dc_مثال اضافة المقررات للمتدربين.xlsx",
+      "PackagePath": "staticwebassets\\TraineeCoursesFiles\\e77cca1e-67de-47a6-b33a-fa44a66622dc_مثال اضافة المقررات للمتدربين.xlsx"
+    },
+    {
+      "Id": "C:\\Users\\KING\\My-GitHub\\CTI\\CTI\\CTI\\wwwroot\\TraineeFiles\\141f528d-b4d5-48d2-bd07-0c3d0ffd6494_المتدربين.xlsx",
+      "PackagePath": "staticwebassets\\TraineeFiles\\141f528d-b4d5-48d2-bd07-0c3d0ffd6494_المتدربين.xlsx"
+    },
+    {
+      "Id": "C:\\Users\\KING\\My-GitHub\\CTI\\CTI\\CTI\\wwwroot\\TraineeFiles\\36a49651-379b-4b3a-8352-a81ae6270478_المتدربين.xlsx",
+      "PackagePath": "staticwebassets\\TraineeFiles\\36a49651-379b-4b3a-8352-a81ae6270478_المتدربين.xlsx"
+    },
+    {
+      "Id": "C:\\Users\\KING\\My-GitHub\\CTI\\CTI\\CTI\\wwwroot\\TraineeFiles\\5862a758-cd1f-4c49-a094-3f68418a5910_المتدربين.xlsx",
+      "PackagePath": "staticwebassets\\TraineeFiles\\5862a758-cd1f-4c49-a094-3f68418a5910_المتدربين.xlsx"
+    },
+    {
+      "Id": "C:\\Users\\KING\\My-GitHub\\CTI\\CTI\\CTI\\wwwroot\\TrainerFiles\\2868a325-5527-47a7-b761-36557f641bf1_المدربين.xlsx",
+      "PackagePath": "staticwebassets\\TrainerFiles\\2868a325-5527-47a7-b761-36557f641bf1_المدربين.xlsx"
+    },
+    {
+      "Id": "C:\\Users\\KING\\My-GitHub\\CTI\\CTI\\CTI\\wwwroot\\TrainerFiles\\74453f39-dfe1-4c47-bc22-0caa35351550_المدربين.xlsx",
+      "PackagePath": "staticwebassets\\TrainerFiles\\74453f39-dfe1-4c47-bc22-0caa35351550_المدربين.xlsx"
+    },
+    {
+      "Id": "C:\\Users\\KING\\My-GitHub\\CTI\\CTI\\CTI\\wwwroot\\TrainerFiles\\b5caeb96-7301-44ac-9e2f-1c12265d67b5_المدربين.xlsx",
+      "PackagePath": "staticwebassets\\TrainerFiles\\b5caeb96-7301-44ac-9e2f-1c12265d67b5_المدربين.xlsx"
+    },
+    {
+      "Id": "C:\\Users\\KING\\My-GitHub\\CTI\\CTI\\CTI\\wwwroot\\TrainerFiles\\b9f73af2-ad3a-474c-a70a-46e0567b0649_المدربين.xlsx",
+      "PackagePath": "staticwebassets\\TrainerFiles\\b9f73af2-ad3a-474c-a70a-46e0567b0649_المدربين.xlsx"
     },
     {
       "Id": "C:\\Users\\KING\\My-GitHub\\CTI\\CTI\\CTI\\wwwroot\\css\\bracket.css",
@@ -15,6 +63,26 @@
     {
       "Id": "C:\\Users\\KING\\My-GitHub\\CTI\\CTI\\CTI\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\KING\\My-GitHub\\CTI\\CTI\\CTI\\wwwroot\\example\\مثال اضافة المتدربين.xlsx",
+      "PackagePath": "staticwebassets\\example\\مثال اضافة المتدربين.xlsx"
+    },
+    {
+      "Id": "C:\\Users\\KING\\My-GitHub\\CTI\\CTI\\CTI\\wwwroot\\example\\مثال اضافة المدربين.xlsx",
+      "PackagePath": "staticwebassets\\example\\مثال اضافة المدربين.xlsx"
+    },
+    {
+      "Id": "C:\\Users\\KING\\My-GitHub\\CTI\\CTI\\CTI\\wwwroot\\example\\مثال اضافة المقررات للمتدربين.xlsx",
+      "PackagePath": "staticwebassets\\example\\مثال اضافة المقررات للمتدربين.xlsx"
+    },
+    {
+      "Id": "C:\\Users\\KING\\My-GitHub\\CTI\\CTI\\CTI\\wwwroot\\example\\مثال اضافة المقررات للمدربين.xlsx",
+      "PackagePath": "staticwebassets\\example\\مثال اضافة المقررات للمدربين.xlsx"
+    },
+    {
+      "Id": "C:\\Users\\KING\\My-GitHub\\CTI\\CTI\\CTI\\wwwroot\\example\\مثال اضافة المقررات.xlsx",
+      "PackagePath": "staticwebassets\\example\\مثال اضافة المقررات.xlsx"
     },
     {
       "Id": "C:\\Users\\KING\\My-GitHub\\CTI\\CTI\\CTI\\wwwroot\\img\\avatar.png",

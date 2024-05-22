@@ -1,0 +1,172 @@
+﻿@using CTI.ViewModels
+@model CreateSurveyVM
+
+@{
+    ViewData["Title"] = "Create Survey";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="br-pagetitle">
+    <h3 class="text-info mr-3">إضافة استبيان جديد</h3>
+</div>
+
+<div class="br-pagebody">
+    <div class="br-section-wrapper">
+        <form method="post" asp-action="Create" asp-controller="Surveys">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label>اسم الاستبيان:</label>
+                <input asp-for="SurveyName" class="form-control" placeholder="اسم الاستبيان" />
+                <span class="text-danger" asp-validation-for="SurveyName"></span>
+            </div>
+
+            <div class="form-group">
+                <label>تاريخ البدء:</label>
+                <input asp-for="StartDate" class="form-control" placeholder="تاريخ البدء" />
+                <span class="text-danger" asp-validation-for="StartDate"></span>
+            </div>
+
+            <div class="form-group">
+                <label>تاريخ الانتهاء:</label>
+                <input asp-for="EndDate" class="form-control" placeholder="تاريخ الانتهاء" />
+                <span class="text-danger" asp-validation-for="EndDate"></span>
+            </div>
+
+            <div class="form-group">
+                <label>الفئة المستهدفة:</label>
+                <select asp-for="ForWho" class="form-control">
+                    <option value="1">للمتدربين</option>
+                    <option value="2">للزوار</option>
+                    <option value="3">للجميع</option>
+                </select>
+                <span class="text-danger" asp-validation-for="ForWho"></span>
+            </div>
+
+            <div class="form-group">
+                <label>المقرر التدريبي:</label>
+                <select id="CourseId" asp-for="CourseId" asp-items="ViewBag.Courses" class="form-control select2" onchange="loadTrainers()"></select>
+                <span class="text-danger" asp-validation-for="CourseId"></span>
+            </div>
+
+            <div class="form-group">
+                <label>المدربين:</label>
+                <select id="UserId" asp-for="UserId" class="form-control select2"></select>
+                <span class="text-danger" asp-validation-for="UserId"></span>
+            </div>
+
+            <div class="form-group">
+                <label>الأسئلة:</label>
+                <div id="questions-container">
+                    @for (int i = 0; i < Model.Questions.Count; i++)
+                    {
+                        <div class="question-block mb-3">
+                            <label>اسم السؤال:</label>
+                            <input asp-for="Questions[i].QuestionName" class="form-control" placeholder="اسم السؤال" />
+                            <span class="text-danger" asp-validation-for="Questions[i].QuestionName"></span>
+                            <button type="button" class="btn btn-danger remove-question">حذف السؤال</button>
+
+                            <div class="mt-2">
+                                <label>الإجابات:</label>
+                                <div class="answers-container">
+                                    @for (int j = 0; j < Model.Questions[i].Answers.Count; j++)
+                                    {
+                                        <div class="answer-block mb-1">
+                                            <input asp-for="Questions[i].Answers[j].AnswerName" class="form-control" placeholder="الإجابة" />
+                                            <span class="text-danger" asp-validation-for="Questions[i].Answers[j].AnswerName"></span>
+                                            <button type="button" class="btn btn-danger remove-answer">حذف الإجابة</button>
+                                        </div>
+                                    }
+                                </div>
+                                <button type="button" class="btn btn-primary add-answer">إضافة إجابة</button>
+                            </div>
+                        </div>
+                    }
+                </div>
+                <button type="button" class="btn btn-primary add-question">إضافة سؤال</button>
+            </div>
+
+            <div class="form-layout-footer mg-t-30 text-center">
+                <input type="submit" value="إضافة" class="btn btn-info">
+                <a asp-action="Index" class="btn btn-secondary">الرجوع</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+        function loadTrainers() {
+            var courseId = $('#CourseId').val();
+            $.ajax({
+                url: '@Url.Action("GetTrainersByCourse", "Surveys")',
+                type: 'GET',
+                data: { courseId: courseId },
+                success: function (data) {
+                    var trainersSelect = $('#UserId');
+                    trainersSelect.empty();
+                    $.each(data, function (i, trainer) {
+                        trainersSelect.append($('<option>', {
+                            value: trainer.id,
+                            text: trainer.userFullName
+                        }));
+                    });
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var questionIndex = @Model.Questions.Count;
+
+            document.querySelector('.add-question').addEventListener('click', function () {
+                var questionContainer = document.getElementById('questions-container');
+                var newQuestionBlock = document.createElement('div');
+                newQuestionBlock.className = 'question-block mb-3';
+                newQuestionBlock.innerHTML = `
+                                <label>اسم السؤال:</label>
+                                <input name="Questions[${questionIndex}].QuestionName" class="form-control" placeholder="اسم السؤال" />
+                                <button type="button" class="btn btn-danger remove-question">حذف السؤال</button>
+                                <div class="mt-2">
+                                    <label>الإجابات:</label>
+                                    <div class="answers-container"></div>
+                                    <button type="button" class="btn btn-primary add-answer">إضافة إجابة</button>
+                                </div>`;
+                questionContainer.appendChild(newQuestionBlock);
+                questionIndex++;
+            });
+
+            document.getElementById('questions-container').addEventListener('click', function (event) {
+                if (event.target && event.target.matches('.add-answer')) {
+                    var answersContainer = event.target.previousElementSibling;
+                    var answerIndex = answersContainer.querySelectorAll('.answer-block').length;
+                    var newAnswerBlock = document.createElement('div');
+                    newAnswerBlock.className = 'answer-block mb-1';
+                    var questionBlock = event.target.closest('.question-block');
+                    var questionIndex = Array.from(questionBlock.parentNode.children).indexOf(questionBlock);
+                    newAnswerBlock.innerHTML = `
+                                    <input name="Questions[${questionIndex}].Answers[${answerIndex}].AnswerName" class="form-control" placeholder="الإجابة" />
+                                    <button type="button" class="btn btn-danger remove-answer">حذف الإجابة</button>`;
+                    answersContainer.appendChild(newAnswerBlock);
+                }
+            });
+
+            document.getElementById('questions-container').addEventListener('click', function (event) {
+                if (event.target && event.target.matches('.remove-question')) {
+                    var questionBlock = event.target.closest('.question-block');
+                    questionBlock.remove();
+                }
+            });
+
+            document.getElementById('questions-container').addEventListener('click', function (event) {
+                if (event.target && event.target.matches('.remove-answer')) {
+                    var answerBlock = event.target.closest('.answer-block');
+                    answerBlock.remove();
+                }
+            });
+        });
+    </script>
+}

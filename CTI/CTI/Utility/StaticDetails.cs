@@ -7,9 +7,9 @@ namespace CTI.Utility
 {
     public class StaticDetails
     {
-        public const string SuperAdmin = "SuperAdmin";
-        public const string Media = "Teacher";
-        public const string Printing = "Student";
+        public const string Admin = "Admin";
+        public const string Trainee = "Trainee";
+        public const string Trainer = "Trainer";
 
     }
 }

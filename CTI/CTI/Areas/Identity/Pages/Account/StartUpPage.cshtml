@@ -20,9 +20,9 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            height: 100vh;
-            overflow: hidden;
+            justify-content: flex-start;
+            height: 100%;
+            overflow: auto;
         }
 
         .header {
@@ -44,6 +44,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            margin-bottom: 20px; /* إضافة مسافة أسفل الحاوية */
         }
 
         .options {
@@ -58,17 +59,31 @@
             text-align: center;
             flex: 1 1 200px;
             box-sizing: border-box;
+            transition: transform 0.3s;
         }
 
             .option img {
                 border-radius: 50%;
                 display: block;
                 margin: 0 auto 10px;
+                transition: box-shadow 0.3s ease;
+                width: 120px;
+                height: 120px;
+            }
+
+            .option:hover img {
+                box-shadow: 0 0 15px rgba(0, 0, 255, 0.5);
             }
 
             .option span {
                 display: block;
             }
+
+        .logo-img {
+            width: 300px;
+            height: auto;
+            max-width: 100%;
+        }
     </style>
 </head>
 <body>
@@ -77,12 +92,15 @@
     </div>
     <div class="container">
         <h2>حدد طريقة الدخول</h2>
+        <div class="d-flex justify-content-center mb-2">
+            <img src="~/img/logo-1.png" class="img-thumbnail logo-img" />
+        </div>
         <div class="options">
             <a href="/Identity/Account/Login" class="option" onclick="redirectToLoginPage()">
                 <img src="~/img/manager.png" alt="مدير النظام">
                 <span>مدير النظام</span>
             </a>
-            <a href="page_trainer.html" class="option">
+            <a href="/Identity/Account/LoginTrainer" class="option" onclick="redirectToLoginTrainerPage()">
                 <img src="~/img/teacher.png" alt="مدرب">
                 <span>مدرب</span>
             </a>
@@ -90,7 +108,7 @@
                 <img src="~/img/vistor.png" alt="زائر">
                 <span>زائر</span>
             </a>
-            <a href="page_trainee.html" class="option">
+            <a href="/Identity/Account/LoginTrainee" class="option" onclick="redirectToLoginTraineePage()">
                 <img src="~/img/student.png" alt="متدرب">
                 <span>متدرب</span>
             </a>
@@ -101,10 +119,12 @@
         function redirectToLoginPage() {
             window.location.href = '/Identity/Account/Login';
         }
+        function redirectToLoginTrainerPage() {
+            window.location.href = '/Identity/Account/LoginTrainer';
+        }
+        function redirectToLoginTraineePage() {
+            window.location.href = '/Identity/Account/LoginTrainee';
+        }
     </script>
 </body>
 </html>
-
-
-
-

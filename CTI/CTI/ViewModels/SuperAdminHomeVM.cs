@@ -4,9 +4,11 @@ namespace CTI.ViewModels
 {
     public class SuperAdminHomeVM
     {
-        public  IEnumerable<ApplicationUser>? Users { get; set; }
-        public  IEnumerable<ApplicationUser>? PrepareTeam { get; set; }
-        public  IEnumerable<ApplicationUser>? ReviewTeam { get; set; }
-        public IEnumerable<ApplicationUser>? MediaTeam { get; set; }
+        public IEnumerable<ApplicationUser>? Trainer { get; set; }
+        public IEnumerable<ApplicationUser>? Trainee { get; set; }
+        public IEnumerable<Course>? Courses { get; set; }
+        public IEnumerable<ApplicationUserCourse>? TraineeCourse { get; set; }
+        public IEnumerable<ApplicationUserCourse>? TrainerCourse { get; set; }
+        public IEnumerable<Survey>? Surveys { get; set; }
     }
 }

@@ -117,18 +117,10 @@ namespace CTI.Areas.Identity.Pages.Account
                     _logger.LogInformation("User logged in.");
                     var user = await _userManager.FindByNameAsync(Input.UserName);
                     var roles = await _signInManager.UserManager.GetRolesAsync(user);
-                    if (roles.First() == StaticDetails.SuperAdmin)
-                        return RedirectToAction(nameof(SuperAdmin.Controllers.HomeController.Index),
-                            nameof(SuperAdmin.Controllers.HomeController).Replace("Controller", ""),
-                            new { area = nameof(SuperAdmin) });
-                    else if (roles.First() == StaticDetails.Media)
-                        return RedirectToAction(nameof(Media.Controllers.HomeController.Index),
-                           nameof(Media.Controllers.HomeController).Replace("Controller", ""),
-                           new { area = nameof(Media) });
-                    else if (roles.First() == StaticDetails.Printing)
-                        return RedirectToAction(nameof(Printing.Controllers.HomeController.Index),
-                           nameof(Printing.Controllers.HomeController).Replace("Controller", ""),
-                           new { area = nameof(Printing) });
+                    if (roles.First() == StaticDetails.Admin)
+                        return RedirectToAction(nameof(Admin.Controllers.HomeController.Index),
+                            nameof(Admin.Controllers.HomeController).Replace("Controller", ""),
+                            new { area = nameof(Admin) });
                     return LocalRedirect(returnUrl);
                 }
                 if (result.RequiresTwoFactor)

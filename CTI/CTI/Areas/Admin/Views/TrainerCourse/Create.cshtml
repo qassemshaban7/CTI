@@ -1,0 +1,65 @@
+﻿@using CTI.ViewModels
+@model CreateTraineeCourseVM
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+<style>
+    .select2-container--default .select2-selection--multiple .select2-selection__choice {
+        color: black;
+    }
+</style>
+
+<div class="br-pagetitle">
+    <h3 class="text-info mr-3">اضافة مقرر للمدربين</h3>
+</div><!-- d-flex -->
+
+<div class="br-pagebody">
+    <div class="br-section-wrapper">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="form-layout form-layout-4">
+                    <form method="post" asp-action="Create" asp-controller="TrainerCourse" enctype="multipart/form-data">
+                        <div class="row mb-3">
+                            <label class="col-sm-4 form-control-label">اسم المقرر: <span class="tx-danger">*</span></label>
+                            <div class="col-sm-8 mg-t-10 mg-sm-t-0">
+                                <input asp-for="Name" type="text" class="form-control" placeholder="اسم المقرر" readonly>
+                                <span class="text-danger" asp-validation-for="Name"></span>
+                            </div>
+                        </div><!-- row -->
+
+                        <div class="form-group">
+                            <label>المدربين:</label>
+                            <select asp-for="UserIds" asp-items="@ViewBag.Trainees" class="form-control select2" multiple></select>
+                        </div>
+
+                        <input type="hidden" asp-for="CourseId" />
+
+                        <div class="form-layout-footer mg-t-30 text-center">
+                            <input type="submit" value=" اضافة" class="btn btn-info">
+                            <a asp-action="Index" class="btn btn-secondary">الرجوع</a>
+                        </div><!-- form-layout-footer -->
+                    </form>
+                </div><!-- form-layout -->
+            </div>
+        </div><!-- row -->
+    </div><!-- br-section-wrapper -->
+</div><!-- br-pagebody -->
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.select2').select2({
+                placeholder: 'اختر المدربين',
+                allowClear: true,
+                width: '100%'
+            });
+        });
+    </script>
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,85 @@
+﻿@using CTI.ViewModels
+@model EditUserVM
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<div class="br-pagetitle">
+    <h3 class="text-info mr-3">تعديل بيانات المتدرب </h3>
+</div><!-- d-flex -->
+
+<div class="br-pagebody">
+    <div class="br-section-wrapper">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="form-layout form-layout-4">
+                    <form method="post" asp-action="Edit" asp-controller="Trainee" enctype="multipart/form-data">
+                        <div class="row mb-3">
+                            <label class="col-sm-4 form-control-label">اسم المتدرب: <span class="tx-danger">*</span></label>
+                            <div class="col-sm-8 mg-t-10 mg-sm-t-0">
+                                <input asp-for="UserFullName" type="text" class="form-control" placeholder="اسم المتدرب" required>
+                                <span class="text-danger" asp-validation-for="UserFullName"></span>
+                            </div>
+                        </div><!-- row -->
+                        <div class="row mb-3">
+                            <label class="col-sm-4 form-control-label">الرقم التدريبي: <span class="tx-danger">*</span></label>
+                            <div class="col-sm-8 mg-t-10 mg-sm-t-0">
+                                <input asp-for="UserName" type="text" class="form-control" placeholder="الرقم التدريبي" required>
+                                <span class="text-danger" asp-validation-for="UserName"></span>
+                            </div>
+                        </div><!-- row -->
+                        <div class="row mb-3">
+                            <label class="col-sm-4 form-control-label">حالة المتدرب: <span class="tx-danger">*</span></label>
+                            <div class="col-sm-8 mg-t-10 mg-sm-t-0">
+                                <input asp-for="Status" type="text" class="form-control" placeholder="حالة المتدرب" required>
+                                <span class="text-danger" asp-validation-for="Status"></span>
+                            </div>
+                        </div><!-- row -->
+                        <div class="row mb-3">
+                            <label class="col-sm-4 form-control-label">البرنامج التدريبي: <span class="tx-danger">*</span></label>
+                            <div class="col-sm-8 mg-t-10 mg-sm-t-0">
+                                <input asp-for="TrainingProgram" type="text" class="form-control" placeholder="البرنامج التدريبي" required>
+                                <span class="text-danger" asp-validation-for="TrainingProgram"></span>
+                            </div>
+                        </div><!-- row -->
+                        <div class="row mb-3">
+                            <label class="col-sm-4 form-control-label">رقم الجوال: <span class="tx-danger">*</span></label>
+                            <div class="col-sm-8 mg-t-10 mg-sm-t-0">
+                                <input asp-for="PhoneNumber" type="text" class="form-control" placeholder="رقم الجوال" required>
+                                <span class="text-danger" asp-validation-for="PhoneNumber"></span>
+                            </div>
+                        </div><!-- row -->
+                        <div class="row mb-3">
+                            <label class="col-sm-4 form-control-label">رقم الهوية: <span class="tx-danger">*</span></label>
+                            <div class="col-sm-8 mg-t-10 mg-sm-t-0">
+                                <input asp-for="TraineeID" type="text" class="form-control" placeholder="رقم الهوية" required>
+                                <span class="text-danger" asp-validation-for="TraineeID"></span>
+                            </div>
+                        </div><!-- row -->
+                        <div class="row mb-3">
+                            <label class="col-sm-4 form-control-label">الايميل: <span class="tx-danger">*</span></label>
+                            <div class="col-sm-8 mg-t-10 mg-sm-t-0">
+                                <input asp-for="Email" type="text" class="form-control" placeholder="الايميل" required>
+                                <span class="text-danger" asp-validation-for="Email"></span>
+                            </div>
+                        </div><!-- row -->
+
+
+                        <input type="hidden" asp-for="Id" />
+
+                        <div class="form-layout-footer mg-t-30 text-center">
+                            <input type="submit" value="حفظ التعديلات" class="btn btn-info">
+                            <a asp-action="Index" class="btn btn-secondary">الرجوع</a>
+                        </div><!-- form-layout-footer -->
+                    </form>
+                </div><!-- form-layout -->
+            </div>
+        </div><!-- row -->
+    </div><!-- br-section-wrapper -->
+</div><!-- br-pagebody -->
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

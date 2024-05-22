@@ -1,0 +1,209 @@
+﻿@using CTI.ViewModels
+@model EditSurveyVM
+
+@{
+    ViewData["Title"] = "تعديل الاستبيان";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<div class="br-pagetitle">
+    <h3 class="text-info mr-3">تعديل بيانات الاستبيان</h3>
+</div><!-- d-flex -->
+
+<div class="br-pagebody">
+    <div class="br-section-wrapper">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="form-layout form-layout-4">
+                    <form method="post" asp-action="Edit" enctype="multipart/form-data">
+                        <div class="row mb-3">
+                            <label class="col-sm-4 form-control-label">اسم الاستبيان: <span class="tx-danger">*</span></label>
+                            <div class="col-sm-8 mg-t-10 mg-sm-t-0">
+                                <input asp-for="SurveyName" type="text" class="form-control" placeholder="اسم الاستبيان" required>
+                                <span class="text-danger" asp-validation-for="SurveyName"></span>
+                            </div>
+                        </div><!-- row -->
+                        <div class="row mb-3">
+                            <label class="col-sm-4 form-control-label">تاريخ البداية: <span class="tx-danger">*</span></label>
+                            <div class="col-sm-8 mg-t-10 mg-sm-t-0">
+                                <input asp-for="StartDate" type="date" class="form-control" placeholder="تاريخ البداية" required>
+                                <span class="text-danger" asp-validation-for="StartDate"></span>
+                            </div>
+                        </div><!-- row -->
+                        <div class="row mb-3">
+                            <label class="col-sm-4 form-control-label">تاريخ النهاية: <span class="tx-danger">*</span></label>
+                            <div class="col-sm-8 mg-t-10 mg-sm-t-0">
+                                <input asp-for="EndDate" type="date" class="form-control" placeholder="تاريخ النهاية" required>
+                                <span class="text-danger" asp-validation-for="EndDate"></span>
+                            </div>
+                        </div><!-- row -->
+                        <div class="row mb-3">
+                            <label class="col-sm-4 form-control-label">الفئة المستهدفة: <span class="tx-danger">*</span></label>
+                            <div class="col-sm-8 mg-t-10 mg-sm-t-0">
+                                <select asp-for="ForWho" class="form-control">
+                                    <option value="1">للمتدربين</option>
+                                    <option value="2">للزوار</option>
+                                    <option value="3">للجميع</option>
+                                </select>
+                                <span class="text-danger" asp-validation-for="ForWho"></span>
+                            </div>
+                        </div><!-- row -->
+
+                        <div class="row mb-3">
+                            <label class="col-sm-4 form-control-label">المقرر التدريبي: <span class="tx-danger">*</span></label>
+                            <div class="col-sm-8 mg-t-10 mg-sm-t-0">
+                                <select asp-for="CourseId" class="form-control" asp-items="ViewBag.Courses"></select>
+                                <span class="text-danger" asp-validation-for="CourseId"></span>
+                            </div>
+                        </div><!-- row -->
+                        <div class="row mb-3">
+                            <label class="col-sm-4 form-control-label">المدرب: <span class="tx-danger">*</span></label>
+                            <div class="col-sm-8 mg-t-10 mg-sm-t-0">
+                                <select asp-for="UserId" class="form-control" asp-items="ViewBag.Trainers"></select>
+                                <span class="text-danger" asp-validation-for="UserId"></span>
+                            </div>
+                        </div><!-- row -->
+
+                        <div id="questions">
+                            @for (int i = 0; i < Model.Questions.Count; i++)
+                            {
+                                <div class="question" data-index="@i">
+                                    <input type="hidden" asp-for="Questions[i].QuestionId" />
+                                    <div class="row mb-3">
+                                        <label class="col-sm-4 form-control-label">سؤال: <span class="tx-danger">*</span></label>
+                                        <div class="col-sm-8 mg-t-10 mg-sm-t-0">
+                                            <input asp-for="Questions[i].QuestionName" type="text" class="form-control" placeholder="سؤال" required>
+                                            <span class="text-danger" asp-validation-for="Questions[i].QuestionName"></span>
+                                        </div>
+                                        <div class="col-sm-12 text-right">
+                                            <button type="button" class="btn btn-danger btn-sm remove-question">إزالة السؤال</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="answers">
+                                        @for (int j = 0; j < Model.Questions[i].Answers.Count; j++)
+                                        {
+                                            <div class="row mb-3">
+                                                <input type="hidden" asp-for="Questions[i].Answers[j].AnswerId" />
+                                                <label class="col-sm-4 form-control-label">إجابة : <span class="tx-danger">*</span></label>
+                                                <div class="col-sm-8 mg-t-10 mg-sm-t-0">
+                                                    <input asp-for="Questions[i].Answers[j].AnswerName" type="text" class="form-control" placeholder="إجابة" required>
+                                                    <span class="text-danger" asp-validation-for="Questions[i].Answers[j].AnswerName"></span>
+                                                </div>
+                                                <div class="col-sm-12 text-right">
+                                                    <button type="button" class="btn btn-danger btn-sm remove-answer">إزالة الإجابة</button>
+                                                </div>
+                                            </div>
+                                        }
+                                    </div>
+                                    <div class="text-right">
+                                        <button type="button" class="btn btn-info btn-sm add-answer">إضافة إجابة</button>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+
+
+                        <div class="text-right mb-3">
+                            <button type="button" class="btn btn-info btn-sm add-question">إضافة سؤال</button>
+                        </div>
+
+                        <input type="hidden" asp-for="SurveyId" />
+
+                        <div class="form-layout-footer mg-t-30 text-center">
+                            <input type="submit" value="حفظ التعديلات" class="btn btn-info">
+                            <a asp-action="Index" class="btn btn-secondary">الرجوع</a>
+                        </div><!-- form-layout-footer -->
+                    </form>
+                </div><!-- form-layout -->
+            </div>
+        </div><!-- row -->
+    </div><!-- br-section-wrapper -->
+</div><!-- br-pagebody -->
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script>
+        $(document).ready(function () {
+            function updateIndexes() {
+                $('.question').each(function (index) {
+                    $(this).attr('data-index', index);
+                    $(this).find('input[name]').each(function () {
+                        var name = $(this).attr('name');
+                        var newName = name.replace(/\[.*?\]/, '[' + index + ']');
+                        $(this).attr('name', newName);
+                    });
+                });
+            }
+
+            function addAnswer(questionIndex) {
+                var answerTemplate = `<div class="row mb-3">
+                                    <label class="col-sm-4 form-control-label">إجابة : <span class="tx-danger">*</span></label>
+                                    <div class="col-sm-8 mg-t-10 mg-sm-t-0">
+                                        <input name="Questions[${questionIndex}].Answers[0].AnswerName" type="text" class="form-control" placeholder="إجابة" required>
+                                    </div>
+                                    <div class="col-sm-12 text-right">
+                                        <button type="button" class="btn btn-danger btn-sm remove-answer">إزالة الإجابة</button>
+                                    </div>
+                                </div>`;
+                $(`.question[data-index=${questionIndex}] .answers`).append(answerTemplate);
+            }
+
+            $('.add-question').click(function () {
+                var questionIndex = $('.question').length;
+                var questionTemplate = `<div class="question" data-index="${questionIndex}">
+                                    <div class="row mb-3">
+                                        <label class="col-sm-4 form-control-label">سؤال: <span class="tx-danger">*</span></label>
+                                        <div class="col-sm-8 mg-t-10 mg-sm-t-0">
+                                            <input name="Questions[${questionIndex}].QuestionName" type="text" class="form-control" placeholder="سؤال" required>
+                                        </div>
+                                        <div class="col-sm-12 text-right">
+                                            <button type="button" class="btn btn-danger btn-sm remove-question">إزالة السؤال</button>
+                                        </div>
+                                    </div>
+                                    <div class="answers"></div>
+                                    <div class="text-right">
+                                        <button type="button" class="btn btn-info btn-sm add-answer">إضافة إجابة</button>
+                                    </div>
+                                </div>`;
+                $('#questions').append(questionTemplate);
+                updateIndexes();
+            });
+
+            $('#questions').on('click', '.remove-question', function () {
+                $(this).closest('.question').remove();
+                updateIndexes();
+            });
+
+            $('#questions').on('click', '.add-answer', function () {
+                var questionIndex = $(this).closest('.question').attr('data-index');
+                addAnswer(questionIndex);
+            });
+
+            $('#questions').on('click', '.remove-answer', function () {
+                $(this).closest('.row').remove();
+            });
+
+            $('#CourseId').change(function () {
+                var courseId = $(this).val();
+                $.ajax({
+                    url: '@Url.Action("GetTrainersByCourse2", "Surveys")',
+                    type: 'GET',
+                    data: { courseId: courseId },
+                    success: function (data) {
+                        var trainersDropdown = $('#UserId');
+                        trainersDropdown.empty();
+                        $.each(data, function (index, item) {
+                            trainersDropdown.append($('<option>', {
+                                value: item.value,
+                                text: item.text
+                            }));
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+}
+
