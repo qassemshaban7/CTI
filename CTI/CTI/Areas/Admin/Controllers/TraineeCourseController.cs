@@ -59,7 +59,7 @@ namespace CTI.Areas.Admin.Controllers
                         {
 
                             long courseCode = Convert.ToInt32(worksheet.Cells[row, 2].Value);
-                            var course = await _context.Courses.FirstOrDefaultAsync(x => x.Code == courseCode);
+                            var course = await _context.Courses.FirstOrDefaultAsync(x => x.ReferenceNumber == courseCode);
 
                             string trainingNumber = worksheet.Cells[row, 1].Value.ToString();
                             var Trainee = await _context.ApplicationUsers.FirstOrDefaultAsync(x => x.UserName == trainingNumber);

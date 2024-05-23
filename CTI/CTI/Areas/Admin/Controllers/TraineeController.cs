@@ -58,13 +58,15 @@ namespace CTI.Areas.Admin.Controllers
                         {
                             var user = new ApplicationUser
                             {
-                                UserFullName = worksheet.Cells[row, 1].Value.ToString(),
-                                UserName = worksheet.Cells[row, 2].Value.ToString(),
-                                PhoneNumber = worksheet.Cells[row, 3].Value.ToString(),
-                                Status = worksheet.Cells[row, 4].Value.ToString(),
-                                TrainingProgram = worksheet.Cells[row, 5].Value.ToString(),
-                                Email = worksheet.Cells[row, 6].Value.ToString(),
-                                TraineeID = Convert.ToInt32(worksheet.Cells[row, 7].Value),
+                                UserFullName = worksheet.Cells[row, 3].Value.ToString(),
+                                EnglishFullName = worksheet.Cells[row, 9].Value.ToString(),
+                                UserName = worksheet.Cells[row, 5].Value.ToString(),
+                                PhoneNumber = worksheet.Cells[row, 2].Value.ToString(),
+                                Status = worksheet.Cells[row, 8].Value.ToString(),
+                                TrainingProgram = worksheet.Cells[row, 6].Value.ToString(),
+                                Email = worksheet.Cells[row, 1].Value.ToString(),
+                                Department = worksheet.Cells[row, 7].Value.ToString(),
+                                RegisterNum = Convert.ToInt32(worksheet.Cells[row, 4].Value),
                                 EmailConfirmed = true,
                             };
 
@@ -137,12 +139,14 @@ namespace CTI.Areas.Admin.Controllers
                 ApplicationUser user = new()
                 {
                     UserFullName = model.UserFullName,
+                    EnglishFullName = model.EnglishFullName,
                     UserName = model.UserName,
                     PhoneNumber = model.PhoneNumber,
                     Status = model.Status,
                     TrainingProgram = model.TrainingProgram,
-                    TraineeID = model.TraineeID,
+                    RegisterNum = model.RegisterNum,
                     Email = model.Email,
+                    Department = model.Department,
                     EmailConfirmed = true,
                 };
 
@@ -187,8 +191,9 @@ namespace CTI.Areas.Admin.Controllers
                 Status = user.Status,
                 TrainingProgram = user.TrainingProgram,
                 Email = user.Email,
-                TraineeID = Convert.ToInt32(user.TraineeID)
-                
+                EnglishFullName = user.EnglishFullName,
+                RegisterNum = user.RegisterNum,
+                Department = user.Department,
             };
 
             return View(editUserVM);
@@ -217,7 +222,9 @@ namespace CTI.Areas.Admin.Controllers
                 user.PhoneNumber = editUserVM.PhoneNumber;
                 user.Status = editUserVM.Status;
                 user.TrainingProgram = editUserVM.TrainingProgram;
-                user.TraineeID = editUserVM.TraineeID;
+                user.EnglishFullName = editUserVM.EnglishFullName;
+                user.RegisterNum = editUserVM.RegisterNum;
+                user.Department = editUserVM.Department;
                 user.Email = editUserVM.Email;
 
                 _context.Update(user);
@@ -248,7 +255,7 @@ namespace CTI.Areas.Admin.Controllers
         {
             try
             {
-                string FileName = "مثال اضافة المتدربين.xlsx";
+                string FileName = "المتدربين.xlsx";
                 string exampleFolder = Path.Combine(_hostingEnvironment.WebRootPath, "example");
                 var filePath = Path.Combine(exampleFolder, FileName);
 

@@ -39,9 +39,11 @@
                 <thead>
                     <tr>
                         <th>اسم المقرر</th>
-                        <th>رقم المقرر</th>
-                        <th>المتطلبات</th>
-                        <th>المدة</th>
+                        <th>رمز المقرر</th>
+                        <th>الرقم المرجعي</th>
+                        <th>التخصص</th>
+                        <th>المرحلة</th>
+                        <th>نوع الشعبة</th>
                         <th>التفاصيل</th>
                         <th>تعديل</th>
                         <th>حذف</th>
@@ -52,9 +54,11 @@
                     {
                         <tr>
                             <td>@item.Name</td>
-                            <td>@item.Code</td>
-                            <td>@item.Requirments</td>
-                            <td>@item.Duration</td>
+                            <td>@item.Coursecode</td>
+                            <td>@item.ReferenceNumber</td>
+                            <td>@item.Specialization</td>
+                            <td>@item.Phase</td>
+                            <td>@item.TypeDivition</td>
                             <td>
                                 <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#ModalUser_@item.Id">
                                     عرض
@@ -141,7 +145,7 @@
                                 <span>اسم المقرر :</span> <span class="text-info">  @item.Name</span>
                             </div>
                             <div class="col">
-                                <span> رقم المقرر :</span> <span class="text-info">   @item.Code</span>
+                                <span> رمز المقرر :</span> <span class="text-info">   @item.Coursecode</span>
                             </div>
                         </div>
                         <hr />
@@ -149,12 +153,34 @@
                         <div class="row mb-2">
                             <div class="row mb-2">
                                 <div class="col">
-                                    <span>مدة المقرر  :</span> <span class="text-info">   @item.Duration</span>
+                                    <span>القسم  :</span> <span class="text-info">   @item.Department</span>
                                 </div>
                                 < class="col">
-                                <span>متطلبات المقرر   :</span> <span class="text-info">
-                                        @item.Requirments
+                                <span>التخصص   :</span> <span class="text-info">
+                                        @item.Specialization
                                 </span>
+                            </div>
+                        </div>
+                        <hr />
+
+                        <div class="row mb-2">
+                            <div class="row mb-2">
+                                <div class="col">
+                                    <span>المرحلة  :</span> <span class="text-info">   @item.Phase</span>
+                                </div>
+                                < class="col">
+                                <span>نوع الشعبة   :</span> <span class="text-info">
+                                        @item.TypeDivition
+                                </span>
+                            </div>
+                        </div>
+                        <hr />
+
+                        <div class="row mb-2">
+                            <div class="row mb-2">
+                                <div class="col">
+                                    <span>الرقم المرجعي  :</span> <span class="text-info">   @item.ReferenceNumber</span>
+                                </div>
                             </div>
                         </div>
                     </div>

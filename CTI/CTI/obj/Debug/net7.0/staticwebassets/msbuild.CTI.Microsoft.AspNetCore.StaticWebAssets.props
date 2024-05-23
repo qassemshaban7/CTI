@@ -1,11 +1,11 @@
 ﻿<Project>
   <ItemGroup>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CoursesFiles\2d65cd57-7f6c-4e67-9ca5-49a08d416aa5_المقررات.xlsx))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CoursesFiles\19cc4e43-c997-4b7f-8483-3103528c4de9_المقررات.xlsx))">
       <SourceType>Package</SourceType>
       <SourceId>CTI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/CTI</BasePath>
-      <RelativePath>CoursesFiles/2d65cd57-7f6c-4e67-9ca5-49a08d416aa5_المقررات.xlsx</RelativePath>
+      <RelativePath>CoursesFiles/19cc4e43-c997-4b7f-8483-3103528c4de9_المقررات.xlsx</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -14,14 +14,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CoursesFiles\2d65cd57-7f6c-4e67-9ca5-49a08d416aa5_المقررات.xlsx))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CoursesFiles\19cc4e43-c997-4b7f-8483-3103528c4de9_المقررات.xlsx))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CoursesFiles\d1319d05-2dd0-4d99-b36c-ef18aab915c6_المقررات.xlsx))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CoursesFiles\e18927c0-ce43-483b-9cf5-83dbe32ee77b_المقررات.xlsx))">
       <SourceType>Package</SourceType>
       <SourceId>CTI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/CTI</BasePath>
-      <RelativePath>CoursesFiles/d1319d05-2dd0-4d99-b36c-ef18aab915c6_المقررات.xlsx</RelativePath>
+      <RelativePath>CoursesFiles/e18927c0-ce43-483b-9cf5-83dbe32ee77b_المقررات.xlsx</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -30,7 +30,7 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CoursesFiles\d1319d05-2dd0-4d99-b36c-ef18aab915c6_المقررات.xlsx))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CoursesFiles\e18927c0-ce43-483b-9cf5-83dbe32ee77b_المقررات.xlsx))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\css\bracket.css))">
       <SourceType>Package</SourceType>
@@ -80,12 +80,12 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CTI.bundle.scp.css))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\example\مثال اضافة المتدربين.xlsx))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\example\المتدربين.xlsx))">
       <SourceType>Package</SourceType>
       <SourceId>CTI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/CTI</BasePath>
-      <RelativePath>example/مثال اضافة المتدربين.xlsx</RelativePath>
+      <RelativePath>example/المتدربين.xlsx</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -94,7 +94,23 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\example\مثال اضافة المتدربين.xlsx))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\example\المتدربين.xlsx))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\example\المقررات.xlsx))">
+      <SourceType>Package</SourceType>
+      <SourceId>CTI</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/CTI</BasePath>
+      <RelativePath>example/المقررات.xlsx</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\example\المقررات.xlsx))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\example\مثال اضافة المدربين.xlsx))">
       <SourceType>Package</SourceType>
@@ -127,38 +143,6 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\example\مثال اضافة المقررات للمتدربين.xlsx))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\example\مثال اضافة المقررات للمدربين.xlsx))">
-      <SourceType>Package</SourceType>
-      <SourceId>CTI</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/CTI</BasePath>
-      <RelativePath>example/مثال اضافة المقررات للمدربين.xlsx</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\example\مثال اضافة المقررات للمدربين.xlsx))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\example\مثال اضافة المقررات.xlsx))">
-      <SourceType>Package</SourceType>
-      <SourceId>CTI</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/CTI</BasePath>
-      <RelativePath>example/مثال اضافة المقررات.xlsx</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\example\مثال اضافة المقررات.xlsx))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\avatar.png))">
       <SourceType>Package</SourceType>
@@ -42368,12 +42352,12 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\OIP.jpeg))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\TraineeCoursesFiles\1ca0ae32-1c31-4d88-b555-cc245d165f09_مثال اضافة المقررات للمدربين.xlsx))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\TraineeCoursesFiles\02ddf9b2-36a2-4909-bde7-f8f819d4c41b_مثال اضافة المقررات للمتدربين.xlsx))">
       <SourceType>Package</SourceType>
       <SourceId>CTI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/CTI</BasePath>
-      <RelativePath>TraineeCoursesFiles/1ca0ae32-1c31-4d88-b555-cc245d165f09_مثال اضافة المقررات للمدربين.xlsx</RelativePath>
+      <RelativePath>TraineeCoursesFiles/02ddf9b2-36a2-4909-bde7-f8f819d4c41b_مثال اضافة المقررات للمتدربين.xlsx</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -42382,14 +42366,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\TraineeCoursesFiles\1ca0ae32-1c31-4d88-b555-cc245d165f09_مثال اضافة المقررات للمدربين.xlsx))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\TraineeCoursesFiles\02ddf9b2-36a2-4909-bde7-f8f819d4c41b_مثال اضافة المقررات للمتدربين.xlsx))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\TraineeCoursesFiles\c26ad31a-8e69-44a1-8348-a7bcec0eb458_مثال اضافة المقررات للمتدربين.xlsx))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\TraineeFiles\a5efac97-a20c-48d3-85cf-2ef50b08fb2c_المتدربين.xlsx))">
       <SourceType>Package</SourceType>
       <SourceId>CTI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/CTI</BasePath>
-      <RelativePath>TraineeCoursesFiles/c26ad31a-8e69-44a1-8348-a7bcec0eb458_مثال اضافة المقررات للمتدربين.xlsx</RelativePath>
+      <RelativePath>TraineeFiles/a5efac97-a20c-48d3-85cf-2ef50b08fb2c_المتدربين.xlsx</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -42398,14 +42382,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\TraineeCoursesFiles\c26ad31a-8e69-44a1-8348-a7bcec0eb458_مثال اضافة المقررات للمتدربين.xlsx))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\TraineeFiles\a5efac97-a20c-48d3-85cf-2ef50b08fb2c_المتدربين.xlsx))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\TraineeCoursesFiles\e77cca1e-67de-47a6-b33a-fa44a66622dc_مثال اضافة المقررات للمتدربين.xlsx))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\TrainerFiles\cba2353e-2c05-4a63-8432-b42b7f3b4d92_المدربين.xlsx))">
       <SourceType>Package</SourceType>
       <SourceId>CTI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/CTI</BasePath>
-      <RelativePath>TraineeCoursesFiles/e77cca1e-67de-47a6-b33a-fa44a66622dc_مثال اضافة المقررات للمتدربين.xlsx</RelativePath>
+      <RelativePath>TrainerFiles/cba2353e-2c05-4a63-8432-b42b7f3b4d92_المدربين.xlsx</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -42414,119 +42398,7 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\TraineeCoursesFiles\e77cca1e-67de-47a6-b33a-fa44a66622dc_مثال اضافة المقررات للمتدربين.xlsx))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\TraineeFiles\141f528d-b4d5-48d2-bd07-0c3d0ffd6494_المتدربين.xlsx))">
-      <SourceType>Package</SourceType>
-      <SourceId>CTI</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/CTI</BasePath>
-      <RelativePath>TraineeFiles/141f528d-b4d5-48d2-bd07-0c3d0ffd6494_المتدربين.xlsx</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\TraineeFiles\141f528d-b4d5-48d2-bd07-0c3d0ffd6494_المتدربين.xlsx))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\TraineeFiles\36a49651-379b-4b3a-8352-a81ae6270478_المتدربين.xlsx))">
-      <SourceType>Package</SourceType>
-      <SourceId>CTI</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/CTI</BasePath>
-      <RelativePath>TraineeFiles/36a49651-379b-4b3a-8352-a81ae6270478_المتدربين.xlsx</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\TraineeFiles\36a49651-379b-4b3a-8352-a81ae6270478_المتدربين.xlsx))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\TraineeFiles\5862a758-cd1f-4c49-a094-3f68418a5910_المتدربين.xlsx))">
-      <SourceType>Package</SourceType>
-      <SourceId>CTI</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/CTI</BasePath>
-      <RelativePath>TraineeFiles/5862a758-cd1f-4c49-a094-3f68418a5910_المتدربين.xlsx</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\TraineeFiles\5862a758-cd1f-4c49-a094-3f68418a5910_المتدربين.xlsx))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\TrainerFiles\2868a325-5527-47a7-b761-36557f641bf1_المدربين.xlsx))">
-      <SourceType>Package</SourceType>
-      <SourceId>CTI</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/CTI</BasePath>
-      <RelativePath>TrainerFiles/2868a325-5527-47a7-b761-36557f641bf1_المدربين.xlsx</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\TrainerFiles\2868a325-5527-47a7-b761-36557f641bf1_المدربين.xlsx))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\TrainerFiles\74453f39-dfe1-4c47-bc22-0caa35351550_المدربين.xlsx))">
-      <SourceType>Package</SourceType>
-      <SourceId>CTI</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/CTI</BasePath>
-      <RelativePath>TrainerFiles/74453f39-dfe1-4c47-bc22-0caa35351550_المدربين.xlsx</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\TrainerFiles\74453f39-dfe1-4c47-bc22-0caa35351550_المدربين.xlsx))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\TrainerFiles\b5caeb96-7301-44ac-9e2f-1c12265d67b5_المدربين.xlsx))">
-      <SourceType>Package</SourceType>
-      <SourceId>CTI</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/CTI</BasePath>
-      <RelativePath>TrainerFiles/b5caeb96-7301-44ac-9e2f-1c12265d67b5_المدربين.xlsx</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\TrainerFiles\b5caeb96-7301-44ac-9e2f-1c12265d67b5_المدربين.xlsx))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\TrainerFiles\b9f73af2-ad3a-474c-a70a-46e0567b0649_المدربين.xlsx))">
-      <SourceType>Package</SourceType>
-      <SourceId>CTI</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/CTI</BasePath>
-      <RelativePath>TrainerFiles/b9f73af2-ad3a-474c-a70a-46e0567b0649_المدربين.xlsx</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\TrainerFiles\b9f73af2-ad3a-474c-a70a-46e0567b0649_المدربين.xlsx))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\TrainerFiles\cba2353e-2c05-4a63-8432-b42b7f3b4d92_المدربين.xlsx))</OriginalItemSpec>
     </StaticWebAsset>
   </ItemGroup>
 </Project>

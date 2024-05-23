@@ -52,10 +52,6 @@ namespace CTI.Areas.Admin.Controllers
                 .Where(x => traineeUserIds.Contains(x.UserId))
                 .ToListAsync();
 
-            var trainerUserIds = trainers.Select(u => u.Id).ToList();
-            var trainerCourses = await _context.ApplicationUserCourses
-                .Where(x => trainerUserIds.Contains(x.UserId))
-                .ToListAsync();
 
             var surveys = await _context.Surveys.ToListAsync();
 
@@ -65,7 +61,6 @@ namespace CTI.Areas.Admin.Controllers
                 Trainer = trainers,
                 Courses = courses,
                 TraineeCourse = traineeCourses,
-                TrainerCourse = trainerCourses,
                 Surveys = surveys,
             };
 

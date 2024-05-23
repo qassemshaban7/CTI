@@ -86,11 +86,17 @@ namespace CTI.Data
             builder.Entity<ApplicationUserCourse>().HasOne(m => m.Course).WithMany(am => am.ApplicationUserCourses).HasForeignKey(m => m.CourseId);
             builder.Entity<ApplicationUserCourse>().HasOne(m => m.ApplicationUser).WithMany(am => am.ApplicationUserCourses).HasForeignKey(m => m.UserId);
 
+            builder.Entity<Course>()
+                .HasOne(a => a.ApplicationUser)
+                .WithOne(c => c.Course)
+                .HasForeignKey<Course>(a => a.UserId)
+                .OnDelete(DeleteBehavior.Restrict);
+
             builder.Entity<Question>()
-        .HasMany(q => q.Results)
-        .WithOne(r => r.Question)
-        .HasForeignKey(r => r.QuestionId)
-        .OnDelete(DeleteBehavior.Cascade);
+                .HasMany(q => q.Results)
+                .WithOne(r => r.Question)
+                .HasForeignKey(r => r.QuestionId)
+                .OnDelete(DeleteBehavior.NoAction);
 
             builder.Entity<Answer>()
                 .HasMany(a => a.Results)

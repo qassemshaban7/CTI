@@ -22,7 +22,6 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\CoursesFiles\" />
-    <Folder Include="wwwroot\TrainerCoursesFiles\" />
     <Folder Include="wwwroot\TraineeCoursesFiles\" />
     <Folder Include="wwwroot\TrainerFiles\" />
     <Folder Include="wwwroot\TraineeFiles\" />

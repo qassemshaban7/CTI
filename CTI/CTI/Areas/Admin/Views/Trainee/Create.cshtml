@@ -23,16 +23,23 @@
                             </div>
                         </div><!-- row -->
                         <div class="row mb-3">
-                            <label class="col-sm-4 form-control-label">الرقم التدريبي: <span class="tx-danger">*</span></label>
+                            <label class="col-sm-4 form-control-label">الاسم انجليزي: <span class="tx-danger">*</span></label>
+                            <div class="col-sm-8 mg-t-10 mg-sm-t-0">
+                                <input asp-for="EnglishFullName" type="text" class="form-control" placeholder="الاسم انجليزي" required>
+                                <span class="text-danger" asp-validation-for="EnglishFullName"></span>
+                            </div>
+                        </div><!-- row -->
+                        <div class="row mb-3">
+                            <label class="col-sm-4 form-control-label">الرقم الاكاديمي: <span class="tx-danger">*</span></label>
                             <div class="col-sm-8 mg-t-10 mg-sm-t-0">
                                 <input asp-for="UserName" type="text" class="form-control" placeholder="الرقم التدريبي" required>
                                 <span class="text-danger" asp-validation-for="UserName"></span>
                             </div>
                         </div><!-- row -->
                         <div class="row mb-3">
-                            <label class="col-sm-4 form-control-label">حالة المتدرب: <span class="tx-danger">*</span></label>
+                            <label class="col-sm-4 form-control-label"> المرحلة: <span class="tx-danger">*</span></label>
                             <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                                <input asp-for="Status" type="text" class="form-control" placeholder="حالة المتدرب" required>
+                                <input asp-for="Status" type="text" class="form-control" placeholder="المرحلة" required>
                                 <span class="text-danger" asp-validation-for="Status"></span>
                             </div>
                         </div><!-- row -->
@@ -51,10 +58,10 @@
                             </div>
                         </div><!-- row -->
                         <div class="row mb-3">
-                            <label class="col-sm-4 form-control-label">رقم الهوية: <span class="tx-danger">*</span></label>
+                            <label class="col-sm-4 form-control-label">القسم : <span class="tx-danger">*</span></label>
                             <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                                <input asp-for="TraineeID" type="text" class="form-control" placeholder="رقم الهوية" required>
-                                <span class="text-danger" asp-validation-for="TraineeID"></span>
+                                <input asp-for="Department" type="text" class="form-control" placeholder=" القسم" required>
+                                <span class="text-danger" asp-validation-for="Department"></span>
                             </div>
                         </div><!-- row -->
                         <div class="row mb-3">
@@ -62,6 +69,13 @@
                             <div class="col-sm-8 mg-t-10 mg-sm-t-0">
                                 <input asp-for="Email" type="text" class="form-control" placeholder="الايميل" required>
                                 <span class="text-danger" asp-validation-for="Email"></span>
+                            </div>
+                        </div><!-- row -->
+                        <div class="row mb-3">
+                            <label class="col-sm-4 form-control-label">رقم السجل: <span class="tx-danger">*</span></label>
+                            <div class="col-sm-8 mg-t-10 mg-sm-t-0">
+                                <input asp-for="RegisterNum" type="text" class="form-control" placeholder="رقم السجل" required>
+                                <span class="text-danger" asp-validation-for="RegisterNum"></span>
                             </div>
                         </div><!-- row -->
 

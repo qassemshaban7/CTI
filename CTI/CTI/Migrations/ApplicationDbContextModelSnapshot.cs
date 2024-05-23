@@ -67,10 +67,10 @@ namespace CTI.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<long>("Code")
+                    b.Property<long>("Coursecode")
                         .HasColumnType("bigint");
 
-                    b.Property<string>("Duration")
+                    b.Property<string>("Department")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -78,11 +78,29 @@ namespace CTI.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Requirments")
+                    b.Property<string>("Phase")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<long>("ReferenceNumber")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("Specialization")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TypeDivition")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId")
+                        .IsUnique();
 
                     b.ToTable("Courses");
                 });
@@ -442,11 +460,17 @@ namespace CTI.Migrations
                     b.Property<string>("Degree")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Status")
+                    b.Property<string>("Department")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<long?>("TraineeID")
+                    b.Property<string>("EnglishFullName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long?>("RegisterNum")
                         .HasColumnType("bigint");
+
+                    b.Property<string>("Status")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TrainingProgram")
                         .HasColumnType("nvarchar(max)");
@@ -462,13 +486,13 @@ namespace CTI.Migrations
                         {
                             Id = "ecc07b18-f55e-4f6b-95bd-0e84f556135f",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "01dd2ad3-2a8e-41be-93e5-df85078aae4e",
+                            ConcurrencyStamp = "9117921e-d27e-4b86-a44b-88ff3f23ac66",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEOQ6puwOeuIB84WAgF7ns2pUnowNKXa1WnHEJOc+/srjQtYEChNdRPpBuM8/PJ0h7A==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEGko+iNzmNon+TKgwzHukQFl7AinXSwfmILSzsXnwWz/EPxTlyXoqgmXMjej68/nOw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "0f5f1547-a3fb-4d7a-9e9a-10cf611432b3",
+                            SecurityStamp = "47a62d53-85e7-4ec3-b2e0-627d0245a801",
                             TwoFactorEnabled = false,
                             UserName = "Admin",
                             UserFullName = "الادمن"
@@ -505,6 +529,17 @@ namespace CTI.Migrations
                     b.Navigation("Course");
                 });
 
+            modelBuilder.Entity("CTI.Models.Course", b =>
+                {
+                    b.HasOne("CTI.Models.ApplicationUser", "ApplicationUser")
+                        .WithOne("Course")
+                        .HasForeignKey("CTI.Models.Course", "UserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("ApplicationUser");
+                });
+
             modelBuilder.Entity("CTI.Models.Question", b =>
                 {
                     b.HasOne("CTI.Models.Survey", "Survey")
@@ -521,13 +556,13 @@ namespace CTI.Migrations
                     b.HasOne("CTI.Models.Answer", "Answer")
                         .WithMany("Results")
                         .HasForeignKey("AnswerId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("CTI.Models.Question", "Question")
                         .WithMany("Results")
                         .HasForeignKey("QuestionId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Answer");
@@ -538,13 +573,13 @@ namespace CTI.Migrations
             modelBuilder.Entity("CTI.Models.Survey", b =>
                 {
                     b.HasOne("CTI.Models.Course", "Course")
-                        .WithMany("Surveys")
+                        .WithMany()
                         .HasForeignKey("CourseId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("CTI.Models.ApplicationUser", "User")
-                        .WithMany("Surveys")
+                        .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -613,8 +648,6 @@ namespace CTI.Migrations
             modelBuilder.Entity("CTI.Models.Course", b =>
                 {
                     b.Navigation("ApplicationUserCourses");
-
-                    b.Navigation("Surveys");
                 });
 
             modelBuilder.Entity("CTI.Models.Question", b =>
@@ -633,7 +666,8 @@ namespace CTI.Migrations
                 {
                     b.Navigation("ApplicationUserCourses");
 
-                    b.Navigation("Surveys");
+                    b.Navigation("Course")
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

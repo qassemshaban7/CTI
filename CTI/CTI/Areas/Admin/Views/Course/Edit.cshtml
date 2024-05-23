@@ -23,24 +23,56 @@
                             </div>
                         </div><!-- row -->
                         <div class="row mb-3">
-                            <label class="col-sm-4 form-control-label">رقم المقرر: <span class="tx-danger">*</span></label>
+                            <label class="col-sm-4 form-control-label">رمز المقرر: <span class="tx-danger">*</span></label>
                             <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                                <input asp-for="Code" type="text" class="form-control" placeholder="رقم المقرر" required>
-                                <span class="text-danger" asp-validation-for="Code"></span>
+                                <input asp-for="Coursecode" type="text" class="form-control" placeholder="رمز المقرر" required>
+                                <span class="text-danger" asp-validation-for="Coursecode"></span>
                             </div>
                         </div><!-- row -->
                         <div class="row mb-3">
-                            <label class="col-sm-4 form-control-label">المتطلبات : <span class="tx-danger">*</span></label>
+                            <label class="col-sm-4 form-control-label">اسم المدرب</label>
+                            <select class="col-sm-7 form-control" required asp-for="UserId">
+                                <option value="">اختر المدرب...</option>
+                                @foreach (var user in ViewBag.Trainers)
+                                {
+                                    <option value="@user.Id">@user.UserFullName</option>
+                                }
+                            </select>
+                        </div><!-- row -->
+
+                        <div class="row mb-3">
+                            <label class="col-sm-4 form-control-label">الرقم المرجعي: <span class="tx-danger">*</span></label>
                             <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                                <input asp-for="Requirments" type="text" class="form-control" placeholder=" المتطلبات" required>
-                                <span class="text-danger" asp-validation-for="Requirments"></span>
+                                <input asp-for="ReferenceNumber" type="text" class="form-control" placeholder="الرقم المرجعي" required>
+                                <span class="text-danger" asp-validation-for="ReferenceNumber"></span>
                             </div>
                         </div><!-- row -->
                         <div class="row mb-3">
-                            <label class="col-sm-4 form-control-label">مدة المقرر: <span class="tx-danger">*</span></label>
+                            <label class="col-sm-4 form-control-label">القسم : <span class="tx-danger">*</span></label>
                             <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                                <input asp-for="Duration" type="text" class="form-control" placeholder="مدة المقرر" required>
-                                <span class="text-danger" asp-validation-for="Duration"></span>
+                                <input asp-for="Department" type="text" class="form-control" placeholder="القسم" required>
+                                <span class="text-danger" asp-validation-for="Department"></span>
+                            </div>
+                        </div><!-- row -->
+                        <div class="row mb-3">
+                            <label class="col-sm-4 form-control-label">التخصص : <span class="tx-danger">*</span></label>
+                            <div class="col-sm-8 mg-t-10 mg-sm-t-0">
+                                <input asp-for="Specialization" type="text" class="form-control" placeholder="التخصص" required>
+                                <span class="text-danger" asp-validation-for="Specialization"></span>
+                            </div>
+                        </div><!-- row -->
+                        <div class="row mb-3">
+                            <label class="col-sm-4 form-control-label">نوع الشعبة : <span class="tx-danger">*</span></label>
+                            <div class="col-sm-8 mg-t-10 mg-sm-t-0">
+                                <input asp-for="TypeDivition" type="text" class="form-control" placeholder="نوع الشعبة" required>
+                                <span class="text-danger" asp-validation-for="TypeDivition"></span>
+                            </div>
+                        </div><!-- row -->
+                        <div class="row mb-3">
+                            <label class="col-sm-4 form-control-label">المرحلة : <span class="tx-danger">*</span></label>
+                            <div class="col-sm-8 mg-t-10 mg-sm-t-0">
+                                <input asp-for="Phase" type="text" class="form-control" placeholder="المرحلة" required>
+                                <span class="text-danger" asp-validation-for="Phase"></span>
                             </div>
                         </div><!-- row -->
                         <input type="hidden" asp-for="Id" />
