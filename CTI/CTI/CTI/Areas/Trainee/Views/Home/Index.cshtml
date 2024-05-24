@@ -1,0 +1,107 @@
+﻿@model CTI.Models.ApplicationUser
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Trainee/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .custom-table th, .custom-table td {
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .custom-table .section-title {
+        background-color: #007b5e;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .custom-table th {
+        background-color: #28a745;
+        color: white;
+    }
+
+    .custom-table td {
+        background-color: #f8f9fa;
+    }
+
+    .student-info, .course-info {
+        margin-bottom: 30px;
+    }
+</style>
+
+<div class="br-pagetitle">
+    <i class="icon fas fa-light fa-house"></i>
+    <div>
+        <h4>الرئيسية</h4>
+        <p class="mg-b-0">نظام استبانات المتدربين</p>
+    </div>
+</div><!-- d-flex -->
+
+<div class="br-pagebody">
+    <div class="br-section-wrapper">
+        <div class="row">
+            <div class="col-md-12 student-info">
+                <div class="section-title">معلومات الطالب</div>
+                <table class="table table-bordered custom-table">
+                    <tr>
+                        <th>اسم الطالب</th>
+                        <td>@Model.UserFullName</td>
+                        <th>رقم الجوال</th>
+                        <td>@Model.PhoneNumber</td>
+                    </tr>
+                    <tr>
+                        <th>حالة المتدرب</th>
+                        <td>@Model.Status</td>
+                        <th>البرنامج التدريبي</th>
+                        <td>@Model.TrainingProgram</td>
+                    </tr>
+                    <tr>
+                        <th>البريد الإلكتروني</th>
+                        <td>@Model.Email</td>
+                        <th>الاسم بالإنجليزية</th>
+                        <td>@Model.EnglishFullName</td>
+                    </tr>
+                    <tr>
+                        <th>رقم السجل</th>
+                        <td>@Model.RegisterNum</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-md-12 course-info">
+                <div class="section-title">المقررات المسجلة</div>
+                <table class="table table-bordered custom-table">
+                    <thead>
+                        <tr>
+                            <th>اسم المقرر</th>
+                            <th>المرحلة</th>
+                            <th>التخصص</th>
+                            <th>رقم المرجع</th>
+                            <th>رمز المقرر</th>
+                            <th>القسم</th>
+                            <th>نوع الشعبة</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var course in ViewBag.registeredCourses)
+                        {
+                            <tr>
+                                <td>@course.Name</td>
+                                <td>@course.Phase</td>
+                                <td>@course.Specialization</td>
+                                <td>@course.ReferenceNumber</td>
+                                <td>@course.Coursecode</td>
+                                <td>@course.Department</td>
+                                <td>@course.TypeDivition</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div><!-- row -->
+    </div><!-- br-section-wrapper -->
+</div><!-- br-pagebody -->

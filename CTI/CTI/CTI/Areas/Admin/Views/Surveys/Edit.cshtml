@@ -1,0 +1,146 @@
+﻿@using CTI.ViewModels
+@model Survey
+
+@{
+    ViewData["Title"] = "تعديل الاستبيان";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<div class="br-pagetitle">
+    <h3 class="text-info mr-3">تعديل بيانات الاستبيان</h3>
+</div><!-- d-flex -->
+
+<div class="br-pagebody">
+    <div class="br-section-wrapper">
+            <form id="dateForm" method="post" asp-action="Edit" enctype="multipart/form-data">
+            <div class="form-group">
+                <label class="text-dark font-weight-bold">اسم الاستبيان:</label>
+                <input asp-for="SurveyName" class="form-control" placeholder="اسم الاستبيان" required />
+                <span class="text-danger" asp-validation-for="SurveyName"></span>
+            </div>
+            <div class="form-group">
+                <label class="text-dark font-weight-bold">التقييم موجه الي :</label>
+                <select asp-for="ForWho" class="form-control">
+                    <option value="1">للمتدربين</option>
+                    <option value="2">للزوار</option>
+                    <option value="3">للجميع</option>
+                </select>
+                <span class="text-danger" asp-validation-for="ForWho"></span>
+            </div>
+            <div class="form-group">
+                <label class="text-dark font-weight-bold">نوع النموذج   :</label>
+                <select asp-for="SurveyType" class="form-control">
+                    <option value="1">تقييم مقرر</option>
+                    <option value="2">تقييم مدرب</option>
+                    <option value="3">تقييم خدمة</option>
+                </select>
+                <span class="text-danger" asp-validation-for="SurveyType"></span>
+            </div>
+            <div class="form-group">
+                <label class="text-dark font-weight-bold">تاريخ البدء:</label>
+                <input asp-for="StartDate" class="form-control" placeholder="تاريخ البدء"  />
+                <span class="text-danger" asp-validation-for="StartDate"></span>
+            </div>
+
+            <div class="form-group">
+                <label class="text-dark font-weight-bold">تاريخ الانتهاء:</label>
+                <input asp-for="EndDate" class="form-control" placeholder="تاريخ الانتهاء"  />
+                <span class="text-danger" asp-validation-for="EndDate"></span>
+            </div>
+                   
+            <input type="hidden" asp-for="Id" />
+
+            <div class="form-layout-footer mg-t-30 text-center">
+                <input type="submit" value="حفظ التعديلات" class="btn btn-info">
+                <a asp-action="Index" class="btn btn-secondary">الرجوع</a>
+            </div><!-- form-layout-footer -->
+        </form>
+    </div><!-- br-section-wrapper -->
+</div><!-- br-pagebody -->
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <link href="~/lib/toaster/toaster.css" rel="stylesheet" />
+    <script src="~/lib/toaster/toaster.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#dateForm').on('submit', function (e) {
+                var currentDate = new Date();
+                var startDate = new Date($('#startDate').val());
+                var endDate = new Date($('#endDate').val());
+
+                if (startDate < currentDate) {
+                    toastr.options = {
+                        "closeButton": false,
+                        "debug": false,
+                        "newestOnTop": false,
+                        "progressBar": true,
+                        "positionClass": "toast-top-left",
+                        "preventDuplicates": true,
+                        "onclick": null,
+                        "showDuration": "300",
+                        "hideDuration": "1000",
+                        "timeOut": "12000",
+                        "extendedTimeOut": "1000",
+                        "showEasing": "swing",
+                        "hideEasing": "linear",
+                        "showMethod": "fadeIn",
+                        "hideMethod": "fadeOut"
+                    }
+                    toastr.error("تاريخ البدء يجب أن يكون بعد التاريخ الحالي.");
+                    e.preventDefault();
+                    return false;
+                }
+
+                if (endDate < currentDate) {
+                    toastr.options = {
+                        "closeButton": false,
+                        "debug": false,
+                        "newestOnTop": false,
+                        "progressBar": true,
+                        "positionClass": "toast-top-left",
+                        "preventDuplicates": true,
+                        "onclick": null,
+                        "showDuration": "300",
+                        "hideDuration": "1000",
+                        "timeOut": "12000",
+                        "extendedTimeOut": "1000",
+                        "showEasing": "swing",
+                        "hideEasing": "linear",
+                        "showMethod": "fadeIn",
+                        "hideMethod": "fadeOut"
+                    }
+                    toastr.error("تاريخ الانتهاء يجب أن يكون بعد التاريخ الحالي.");
+                    e.preventDefault();
+                    return false;
+                }
+
+                if (endDate <= startDate) {
+                    toastr.options = {
+                        "closeButton": false,
+                        "debug": false,
+                        "newestOnTop": false,
+                        "progressBar": true,
+                        "positionClass": "toast-top-left",
+                        "preventDuplicates": true,
+                        "onclick": null,
+                        "showDuration": "300",
+                        "hideDuration": "1000",
+                        "timeOut": "12000",
+                        "extendedTimeOut": "1000",
+                        "showEasing": "swing",
+                        "hideEasing": "linear",
+                        "showMethod": "fadeIn",
+                        "hideMethod": "fadeOut"
+                    }
+                    toastr.error("تاريخ الانتهاء يجب أن يكون بعد تاريخ البدء");
+                    e.preventDefault();
+                    return false;
+                }
+
+                return true;
+            });
+        });
+    </script>
+}
+

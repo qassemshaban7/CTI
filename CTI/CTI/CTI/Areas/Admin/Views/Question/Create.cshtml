@@ -1,0 +1,91 @@
+﻿@model Question
+
+@{
+    ViewData["Title"] = "Create Question";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="br-pagetitle">
+    <h3 class="text-info mr-3">   إضافة سؤال جديد (@ViewBag.surveyName)</h3>
+</div>
+
+<div class="br-pagebody">
+    <div class="br-section-wrapper">
+        <form method="post" asp-action="Create" asp-controller="Question">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label class="text-dark font-weight-bold">السؤال:</label>
+                <input asp-for="QuestionText" class="form-control" placeholder=" السؤال" required />
+                <span class="text-danger" asp-validation-for="QuestionText"></span>
+            </div>
+            <div class="form-group">
+                <label class="text-dark font-weight-bold">نوع السؤال   :</label>
+                <select asp-for="QuestionType" id="questionType" class="form-control" required>
+                    <option value="">اختر ...</option>
+                    <option value="1">نص</option>
+                    <option value="2">اختيار واحد</option>
+                    <option value="3">اختيار متعدد</option>
+                </select>
+                <span class="text-danger" asp-validation-for="QuestionType"></span>
+            </div>
+            
+            <div class="form-group answer-field">
+                <label class="text-dark font-weight-bold">اجابة 1:</label>
+                <input asp-for="FirstAnswer" id="firstAnswer" class="form-control" placeholder=" اجابة 1" />
+                <span class="text-danger" asp-validation-for="FirstAnswer"></span>
+            </div>
+            <div class="form-group answer-field">
+                <label class="text-dark font-weight-bold">اجابة 2:</label>
+                <input asp-for="SecondAnswer" class="form-control" placeholder=" اجابة 2" />
+                <span class="text-danger" asp-validation-for="SecondAnswer"></span>
+            </div>
+            <div class="form-group answer-field">
+                <label class="text-dark font-weight-bold">اجابة 3:</label>
+                <input asp-for="ThirdAnswer" class="form-control" placeholder=" اجابة 3" />
+                <span class="text-danger" asp-validation-for="ThirdAnswer"></span>
+            </div>
+            <div class="form-group answer-field">
+                <label class="text-dark font-weight-bold">اجابة 4:</label>
+                <input asp-for="FourthAnswer" class="form-control" placeholder=" اجابة 4" />
+                <span class="text-danger" asp-validation-for="FourthAnswer"></span>
+            </div>
+            <input type="hidden" asp-for="SurveyId" value="@ViewBag.surveyId" />
+            <div class="form-layout-footer mg-t-30 text-center">
+                <input type="submit" value="إضافة" class="btn btn-info">
+                <a asp-action="Index" class="btn btn-secondary">الرجوع</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="~/lib/toaster/toaster.css" rel="stylesheet" />
+    <script src="~/lib/toaster/toaster.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            function toggleAnswerFields() {
+                var selectedValue = $('#questionType').val();
+                if (selectedValue == '1') {
+                    $('.answer-field').hide();
+                    $('#firstAnswer').prop('required', false);
+                } else if (selectedValue == '2' || selectedValue == '3') {
+                    $('.answer-field').show();
+                    $('#firstAnswer').prop('required', true);
+                }
+            }
+
+            
+
+            // Check on change
+            $('#questionType').change(function () {
+                toggleAnswerFields();
+            });
+        });
+       
+    </script>
+}

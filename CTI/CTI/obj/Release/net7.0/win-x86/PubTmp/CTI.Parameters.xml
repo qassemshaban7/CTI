@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters>
-  <parameter name="IIS Web Application Name" description="" value="site4915" tags="IisApp">
-    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\KING\\My-GitHub\\CTI\\CTI\\CTI\\obj\\Release\\net7\.0\\win-x86\\PubTmp\\Out\\$" />
-  </parameter>
-</parameters>

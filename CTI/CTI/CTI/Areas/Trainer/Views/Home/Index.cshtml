@@ -1,0 +1,107 @@
+﻿@model ApplicationUser
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Trainer/Views/Shared/_Layout.cshtml";
+}
+
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+<style>
+    .custom-table th, .custom-table td {
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .custom-table .section-title {
+        background-color: #007b5e;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 5px 5px 0 0;
+    }
+
+    .custom-table th {
+        background-color: #28a745;
+        color: white;
+        font-size: 16px;
+    }
+
+    .custom-table td {
+        background-color: #e9ecef;
+        color: #333;
+        font-size: 14px;
+    }
+
+    .student-info, .course-info {
+        margin-bottom: 30px;
+    }
+
+    .table-bordered {
+        border: 2px solid #007b5e;
+    }
+
+    .evaluation-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+        .evaluation-icon.evaluated {
+            background-color: #28a745; /* لون أخضر */
+            border-radius: 50%;
+        }
+
+        .evaluation-icon.not-evaluated {
+            background-color: #dc3545; /* لون أحمر */
+            border-radius: 50%;
+        }
+</style>
+
+<div class="br-pagetitle">
+    <i class="icon fas fa-light fa-house"></i>
+    <div>
+        <h4>المقرر: @ViewBag..Instructor.Course.FirstOrDefault()?.Name</h4>
+    </div>
+</div><!-- d-flex -->
+
+<div class="br-pagebody">
+    <div class="br-section-wrapper">
+        <div class="row">
+            <div class="col-md-12 course-info">
+                <div class="section-title">الطلاب المسجلين</div>
+                <table class="table table-bordered custom-table">
+                    <thead>
+                        <tr>
+                            <th>اسم الطالب</th>
+                            <th>الرفم الاكاديمي</th>
+                            <th>الحالة</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var course in ViewBag.instructor.ApplicationUserCourses)
+                        {
+                            @foreach (var studentCourse in course.ApplicationUser)
+                            {
+                                <tr>
+                                    <td>@studentCourse.ApplicationUser.UserFullName</td>
+                                    <td>@studentCourse.ApplicationUser.UserName</td>
+@*                                     <td>
+                                        @if (studentCourse.IsEvaluated)
+                                        {
+                                            <div class="evaluation-icon evaluated"></div>
+                                        }
+                                        else
+                                        {
+                                            <div class="evaluation-icon not-evaluated"></div>
+                                        }
+                                    </td> *@
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div><!-- row -->
+    </div><!-- br-section-wrapper -->
+</div><!-- br-pagebody -->
