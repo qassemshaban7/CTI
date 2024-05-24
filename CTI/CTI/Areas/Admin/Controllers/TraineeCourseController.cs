@@ -115,17 +115,18 @@ namespace CTI.Areas.Admin.Controllers
                 HttpContext.Session.Remove("deleted");
             }
 
-            var Course = await _context.Courses.ToListAsync();
+            var Course = await _context.Courses.Include(x => x.ApplicationUser).ToListAsync();
 
             return View(Course);
         }
+
         public async Task<IActionResult> Create(int Id, string? returnUrl = null)
         {
             if (Id == null)
             {
                 return NotFound();
             }
-
+            
             var course = await _context.Courses.FindAsync(Id);
             if (course == null)
             {
@@ -181,7 +182,33 @@ namespace CTI.Areas.Admin.Controllers
 
                 if (model.UserIds == null)
                 {
-                    ModelState.AddModelError("", "خطا في بيانات المتدربين");
+                    ModelState.AddModelError("", "يجب اختيار متدربين");
+                    var selectedTraineeCourses = await _context.ApplicationUserCourses
+                          .Where(ptu => ptu.CourseId == model.CourseId)
+                          .Select(ptu => ptu.UserId)
+                          .ToListAsync();
+
+                    var Trainees = await (from x in _context.ApplicationUsers
+                                          join userRole in _context.UserRoles
+                                          on x.Id equals userRole.UserId
+                                          join role in _context.Roles
+                                          on userRole.RoleId equals role.Id
+                                          where role.Name == StaticDetails.Trainee
+                                          select x)
+                                    .ToListAsync();
+
+                    ViewBag.Trainees = Trainees;
+                    ViewBag.selectedTraineeCourses = selectedTraineeCourses;
+
+                    var traineecourse = new CreateTraineeCourseVM
+                    {
+                        UserIds = selectedTraineeCourses,
+                        CourseId = course.Id,
+                        Name = course.Name,
+                    };
+
+                    return View(traineecourse);
+
                 }
 
                 foreach (var userId in model.UserIds)

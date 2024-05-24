@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "P08Eax7Lm3GzMqqTuquEMn6wIXmI/Tq86mntjxLjRZU=",
+  "Hash": "XDWrQp8cZeky9QQzE+5BNcZnnBzHswIshpj28Av/NqI=",
   "Source": "CTI",
   "BasePath": "_content/CTI",
   "Mode": "Default",
@@ -1195,12 +1195,12 @@
       "OriginalItemSpec": "C:\\Users\\KING\\My-GitHub\\CTI\\CTI\\CTI\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\CTI.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\KING\\My-GitHub\\CTI\\CTI\\CTI\\wwwroot\\CoursesFiles\\19cc4e43-c997-4b7f-8483-3103528c4de9_المقررات.xlsx",
+      "Identity": "C:\\Users\\KING\\My-GitHub\\CTI\\CTI\\CTI\\wwwroot\\CoursesFiles\\13dbb3d2-7093-45d6-b681-e2292f75a339_المقررات.xlsx",
       "SourceId": "CTI",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\KING\\My-GitHub\\CTI\\CTI\\CTI\\wwwroot\\",
       "BasePath": "_content/CTI",
-      "RelativePath": "CoursesFiles/19cc4e43-c997-4b7f-8483-3103528c4de9_المقررات.xlsx",
+      "RelativePath": "CoursesFiles/13dbb3d2-7093-45d6-b681-e2292f75a339_المقررات.xlsx",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1211,15 +1211,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\CoursesFiles\\19cc4e43-c997-4b7f-8483-3103528c4de9_المقررات.xlsx"
+      "OriginalItemSpec": "wwwroot\\CoursesFiles\\13dbb3d2-7093-45d6-b681-e2292f75a339_المقررات.xlsx"
     },
     {
-      "Identity": "C:\\Users\\KING\\My-GitHub\\CTI\\CTI\\CTI\\wwwroot\\CoursesFiles\\e18927c0-ce43-483b-9cf5-83dbe32ee77b_المقررات.xlsx",
+      "Identity": "C:\\Users\\KING\\My-GitHub\\CTI\\CTI\\CTI\\wwwroot\\CoursesFiles\\15a6577a-935f-483f-8b53-69b39ae0db3d_المقررات.xlsx",
       "SourceId": "CTI",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\KING\\My-GitHub\\CTI\\CTI\\CTI\\wwwroot\\",
       "BasePath": "_content/CTI",
-      "RelativePath": "CoursesFiles/e18927c0-ce43-483b-9cf5-83dbe32ee77b_المقررات.xlsx",
+      "RelativePath": "CoursesFiles/15a6577a-935f-483f-8b53-69b39ae0db3d_المقررات.xlsx",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1230,7 +1230,45 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\CoursesFiles\\e18927c0-ce43-483b-9cf5-83dbe32ee77b_المقررات.xlsx"
+      "OriginalItemSpec": "wwwroot\\CoursesFiles\\15a6577a-935f-483f-8b53-69b39ae0db3d_المقررات.xlsx"
+    },
+    {
+      "Identity": "C:\\Users\\KING\\My-GitHub\\CTI\\CTI\\CTI\\wwwroot\\CoursesFiles\\7e34dadc-f4cb-49c2-a250-507034f15d10_المقررات.xlsx",
+      "SourceId": "CTI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\KING\\My-GitHub\\CTI\\CTI\\CTI\\wwwroot\\",
+      "BasePath": "_content/CTI",
+      "RelativePath": "CoursesFiles/7e34dadc-f4cb-49c2-a250-507034f15d10_المقررات.xlsx",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\CoursesFiles\\7e34dadc-f4cb-49c2-a250-507034f15d10_المقررات.xlsx"
+    },
+    {
+      "Identity": "C:\\Users\\KING\\My-GitHub\\CTI\\CTI\\CTI\\wwwroot\\CoursesFiles\\cc99d7e6-1a2e-472c-952d-5f4017afca73_المقررات.xlsx",
+      "SourceId": "CTI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\KING\\My-GitHub\\CTI\\CTI\\CTI\\wwwroot\\",
+      "BasePath": "_content/CTI",
+      "RelativePath": "CoursesFiles/cc99d7e6-1a2e-472c-952d-5f4017afca73_المقررات.xlsx",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\CoursesFiles\\cc99d7e6-1a2e-472c-952d-5f4017afca73_المقررات.xlsx"
     },
     {
       "Identity": "C:\\Users\\KING\\My-GitHub\\CTI\\CTI\\CTI\\wwwroot\\css\\bracket.css",
@@ -51469,12 +51507,12 @@
       "OriginalItemSpec": "wwwroot\\OIP.jpeg"
     },
     {
-      "Identity": "C:\\Users\\KING\\My-GitHub\\CTI\\CTI\\CTI\\wwwroot\\TraineeCoursesFiles\\02ddf9b2-36a2-4909-bde7-f8f819d4c41b_مثال اضافة المقررات للمتدربين.xlsx",
+      "Identity": "C:\\Users\\KING\\My-GitHub\\CTI\\CTI\\CTI\\wwwroot\\TraineeCoursesFiles\\37e33a5b-7e74-4025-92ce-26731fb1aa63_مثال اضافة المقررات للمتدربين.xlsx",
       "SourceId": "CTI",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\KING\\My-GitHub\\CTI\\CTI\\CTI\\wwwroot\\",
       "BasePath": "_content/CTI",
-      "RelativePath": "TraineeCoursesFiles/02ddf9b2-36a2-4909-bde7-f8f819d4c41b_مثال اضافة المقررات للمتدربين.xlsx",
+      "RelativePath": "TraineeCoursesFiles/37e33a5b-7e74-4025-92ce-26731fb1aa63_مثال اضافة المقررات للمتدربين.xlsx",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -51485,15 +51523,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\TraineeCoursesFiles\\02ddf9b2-36a2-4909-bde7-f8f819d4c41b_مثال اضافة المقررات للمتدربين.xlsx"
+      "OriginalItemSpec": "wwwroot\\TraineeCoursesFiles\\37e33a5b-7e74-4025-92ce-26731fb1aa63_مثال اضافة المقررات للمتدربين.xlsx"
     },
     {
-      "Identity": "C:\\Users\\KING\\My-GitHub\\CTI\\CTI\\CTI\\wwwroot\\TraineeFiles\\a5efac97-a20c-48d3-85cf-2ef50b08fb2c_المتدربين.xlsx",
+      "Identity": "C:\\Users\\KING\\My-GitHub\\CTI\\CTI\\CTI\\wwwroot\\TraineeCoursesFiles\\5c1cc25c-6adc-4c34-b43e-aae660c9bd4a_مثال اضافة المقررات للمتدربين.xlsx",
       "SourceId": "CTI",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\KING\\My-GitHub\\CTI\\CTI\\CTI\\wwwroot\\",
       "BasePath": "_content/CTI",
-      "RelativePath": "TraineeFiles/a5efac97-a20c-48d3-85cf-2ef50b08fb2c_المتدربين.xlsx",
+      "RelativePath": "TraineeCoursesFiles/5c1cc25c-6adc-4c34-b43e-aae660c9bd4a_مثال اضافة المقررات للمتدربين.xlsx",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -51504,15 +51542,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\TraineeFiles\\a5efac97-a20c-48d3-85cf-2ef50b08fb2c_المتدربين.xlsx"
+      "OriginalItemSpec": "wwwroot\\TraineeCoursesFiles\\5c1cc25c-6adc-4c34-b43e-aae660c9bd4a_مثال اضافة المقررات للمتدربين.xlsx"
     },
     {
-      "Identity": "C:\\Users\\KING\\My-GitHub\\CTI\\CTI\\CTI\\wwwroot\\TrainerFiles\\cba2353e-2c05-4a63-8432-b42b7f3b4d92_المدربين.xlsx",
+      "Identity": "C:\\Users\\KING\\My-GitHub\\CTI\\CTI\\CTI\\wwwroot\\TraineeCoursesFiles\\c170389e-1c9c-4932-93b0-b3cdabe7931c_مثال اضافة المقررات للمتدربين.xlsx",
       "SourceId": "CTI",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\KING\\My-GitHub\\CTI\\CTI\\CTI\\wwwroot\\",
       "BasePath": "_content/CTI",
-      "RelativePath": "TrainerFiles/cba2353e-2c05-4a63-8432-b42b7f3b4d92_المدربين.xlsx",
+      "RelativePath": "TraineeCoursesFiles/c170389e-1c9c-4932-93b0-b3cdabe7931c_مثال اضافة المقررات للمتدربين.xlsx",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -51523,7 +51561,45 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\TrainerFiles\\cba2353e-2c05-4a63-8432-b42b7f3b4d92_المدربين.xlsx"
+      "OriginalItemSpec": "wwwroot\\TraineeCoursesFiles\\c170389e-1c9c-4932-93b0-b3cdabe7931c_مثال اضافة المقررات للمتدربين.xlsx"
+    },
+    {
+      "Identity": "C:\\Users\\KING\\My-GitHub\\CTI\\CTI\\CTI\\wwwroot\\TraineeFiles\\30483a82-9ba6-49bc-9a3e-7ce11d4e1a9d_المتدربين.xlsx",
+      "SourceId": "CTI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\KING\\My-GitHub\\CTI\\CTI\\CTI\\wwwroot\\",
+      "BasePath": "_content/CTI",
+      "RelativePath": "TraineeFiles/30483a82-9ba6-49bc-9a3e-7ce11d4e1a9d_المتدربين.xlsx",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\TraineeFiles\\30483a82-9ba6-49bc-9a3e-7ce11d4e1a9d_المتدربين.xlsx"
+    },
+    {
+      "Identity": "C:\\Users\\KING\\My-GitHub\\CTI\\CTI\\CTI\\wwwroot\\TrainerFiles\\eb7a632a-60a1-438d-a41f-8e75de45c9b0_المدربين.xlsx",
+      "SourceId": "CTI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\KING\\My-GitHub\\CTI\\CTI\\CTI\\wwwroot\\",
+      "BasePath": "_content/CTI",
+      "RelativePath": "TrainerFiles/eb7a632a-60a1-438d-a41f-8e75de45c9b0_المدربين.xlsx",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\TrainerFiles\\eb7a632a-60a1-438d-a41f-8e75de45c9b0_المدربين.xlsx"
     }
   ]
 }

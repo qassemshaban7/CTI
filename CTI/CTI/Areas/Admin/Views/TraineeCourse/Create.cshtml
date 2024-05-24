@@ -23,6 +23,20 @@
             <div class="col-xl-12">
                 <div class="form-layout form-layout-4">
                     <form method="post" asp-action="Create" asp-controller="TraineeCourse" enctype="multipart/form-data">
+
+
+                        @if (!ViewData.ModelState.IsValid)
+                        {
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                                    {
+                                        <li>@error.ErrorMessage</li>
+                                    }
+                                </ul>
+                            </div>
+                        }
+
                         <div class="row mb-3">
                             <label class="col-sm-4 form-control-label">اسم المقرر: <span class="tx-danger">*</span></label>
                             <div class="col-sm-8 mg-t-10 mg-sm-t-0">
@@ -33,7 +47,7 @@
 
                         <div class="form-group">
                             <label>المتدربين:</label>
-                            <select asp-for="UserIds" asp-items="@ViewBag.Trainees" class="form-control select2" multiple></select>
+                            <select asp-for="UserIds" asp-items="@ViewBag.Trainees" class="form-control select2" multiple required></select>
                         </div>
 
                         <input type="hidden" asp-for="CourseId" />

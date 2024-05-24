@@ -57,7 +57,11 @@ namespace CTI.Areas.Admin.Controllers
                         {
 
                             string  username = worksheet.Cells[row, 2].Value.ToString();
-                            var user = await _context.ApplicationUsers.FirstOrDefaultAsync(x => x.UserName == username);
+                            var user = await _context.ApplicationUsers.Include(u => u.Course).FirstOrDefaultAsync(x => x.UserName == username);
+                            if (user.Course != null)
+                            {
+                                continue;
+                            }
 
                             var course = new Course
                             {
@@ -66,6 +70,7 @@ namespace CTI.Areas.Admin.Controllers
                                 Phase = worksheet.Cells[row, 7].Value.ToString(),
                                 Department = worksheet.Cells[row, 5].Value.ToString(),
                                 TypeDivition = worksheet.Cells[row, 8].Value.ToString(),
+                                ApplicationUser = user,
                                 UserId = user.Id,
                                 Coursecode = Convert.ToInt32(worksheet.Cells[row, 3].Value),
                                 ReferenceNumber = Convert.ToInt32(worksheet.Cells[row, 1].Value),
@@ -106,7 +111,7 @@ namespace CTI.Areas.Admin.Controllers
                 HttpContext.Session.Remove("deleted");
             }
 
-            var Course = await _context.Courses.ToListAsync();
+            var Course = await _context.Courses.Include(x => x.ApplicationUser).ToListAsync();
 
             return View(Course);
         }
@@ -139,6 +144,45 @@ namespace CTI.Areas.Admin.Controllers
             ViewData["ReturnUrl"] = returnUrl;
             try
             {
+                var user = await _context.ApplicationUsers.Include(u => u.Course).FirstOrDefaultAsync(u => u.Id == model.UserId);
+
+                if (user == null)
+                {
+                    ModelState.AddModelError("", "المستخدم غير موجود");
+                    var users = await (from x in _context.ApplicationUsers
+                                       join userRole in _context.UserRoles
+                                       on x.Id equals userRole.UserId
+                                       join role in _context.Roles
+                                       on userRole.RoleId equals role.Id
+                                       where role.Name == StaticDetails.Trainer
+                                       select new ApplicationUser
+                                       {
+                                           Id = x.Id,
+                                           UserFullName = x.UserFullName
+                                       }).ToListAsync();
+
+                    ViewBag.Trainers = users;
+                    return View(model);
+                }
+
+                if (user.Course != null)
+                {
+                    ModelState.AddModelError("", "هذا المستخدم لديه مقرر بالفعل");
+                    var users = await (from x in _context.ApplicationUsers
+                                       join userRole in _context.UserRoles
+                                       on x.Id equals userRole.UserId
+                                       join role in _context.Roles
+                                       on userRole.RoleId equals role.Id
+                                       where role.Name == StaticDetails.Trainer
+                                       select new ApplicationUser
+                                       {
+                                           Id = x.Id,
+                                           UserFullName = x.UserFullName
+                                       }).ToListAsync();
+
+                    ViewBag.Trainers = users;
+                    return View(model);
+                }
                 Course course = new()
                 {
                     Name = model.Name,
@@ -148,7 +192,8 @@ namespace CTI.Areas.Admin.Controllers
                     TypeDivition = model.TypeDivition,
                     Department = model.Department,
                     ReferenceNumber = model.ReferenceNumber,
-                    UserId = model.UserId
+                    UserId = model.UserId,
+                    ApplicationUser = user
                 };
 
                 _context.Courses.Add(course);
@@ -160,7 +205,7 @@ namespace CTI.Areas.Admin.Controllers
             }
             catch (Exception ex)
             {
-                ModelState.AddModelError("", "خطا في بيانات المقرر");
+                ModelState.AddModelError("", "هذا المدرب لديه مقرر بالفaaعل");
 
                 var users = await (from x in _context.ApplicationUsers
                                    join userRole in _context.UserRoles
@@ -204,7 +249,8 @@ namespace CTI.Areas.Admin.Controllers
                 TypeDivition = course.TypeDivition,
                 Department = course.Department,
                 ReferenceNumber = course.ReferenceNumber,
-                UserId = course.UserId
+                UserId = course.UserId,
+
             };
 
             var users = await (from x in _context.ApplicationUsers
@@ -239,6 +285,41 @@ namespace CTI.Areas.Admin.Controllers
                     return NotFound();
                 }
 
+                var user = await _context.ApplicationUsers.Include(u => u.Course)
+                                     .FirstOrDefaultAsync(u => u.Id == editUserVM.UserId);
+
+
+                if (user.Course != null && user.Course.Id != id)
+                {
+                    ModelState.AddModelError("", "هذا المستخدم لديه مقرر بالفعل");
+
+                    editUserVM = new EditCourseVM
+                    {
+                        Id = course.Id,
+                        Name = course.Name,
+                        Coursecode = course.Coursecode,
+                        Phase = course.Phase,
+                        Specialization = course.Specialization,
+                        TypeDivition = course.TypeDivition,
+                        Department = course.Department,
+                        ReferenceNumber = course.ReferenceNumber,
+                        UserId = course.UserId
+                    };
+
+                    var users = await (from x in _context.ApplicationUsers
+                                       join userRole in _context.UserRoles
+                                       on x.Id equals userRole.UserId
+                                       join role in _context.Roles
+                                       on userRole.RoleId equals role.Id
+                                       where role.Name == StaticDetails.Trainer
+                                       select x)
+                                       .ToListAsync();
+
+                    ViewBag.Trainers = users;
+
+                    return View(editUserVM);
+                }
+
                 course.Name = editUserVM.Name;
                 course.Coursecode = editUserVM.Coursecode;
                 course.Phase = editUserVM.Phase;
@@ -247,6 +328,7 @@ namespace CTI.Areas.Admin.Controllers
                 course.Department = editUserVM.Department;
                 course.ReferenceNumber = editUserVM.ReferenceNumber;
                 course.UserId = editUserVM.UserId;
+                course.ApplicationUser = user;
 
                 _context.Update(course);
                 await _context.SaveChangesAsync();
@@ -255,6 +337,7 @@ namespace CTI.Areas.Admin.Controllers
             }
             catch
             {
+                ModelState.AddModelError("", "خطا في بيانات المقرر.");
                 var course = await _context.Courses.FindAsync(id);
                 if (course == null)
                 {
@@ -288,6 +371,7 @@ namespace CTI.Areas.Admin.Controllers
                 return View(editUserVM);
             }
         }
+
 
         public async Task<IActionResult> Delete(int id)
         {

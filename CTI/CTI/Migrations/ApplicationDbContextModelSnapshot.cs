@@ -486,13 +486,13 @@ namespace CTI.Migrations
                         {
                             Id = "ecc07b18-f55e-4f6b-95bd-0e84f556135f",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "9117921e-d27e-4b86-a44b-88ff3f23ac66",
+                            ConcurrencyStamp = "8c7c588b-1d7d-49b4-bed0-add9dd9ef3fd",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEGko+iNzmNon+TKgwzHukQFl7AinXSwfmILSzsXnwWz/EPxTlyXoqgmXMjej68/nOw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAENIUjdvLoE2TVhEUtBQb9gvhL6VToDcIkMM67jCSOl/jJuNaOle2bjC/we/tQI47lQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "47a62d53-85e7-4ec3-b2e0-627d0245a801",
+                            SecurityStamp = "f8d30e04-ca86-47b0-a7b9-6678626bc144",
                             TwoFactorEnabled = false,
                             UserName = "Admin",
                             UserFullName = "الادمن"

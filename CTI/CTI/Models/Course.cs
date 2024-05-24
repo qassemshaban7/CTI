@@ -19,6 +19,6 @@ namespace CTI.Models
 
         [ForeignKey("UserId")]
         public string UserId { get; set; }
-        public ApplicationUser? ApplicationUser { get; set; }  
+        public ApplicationUser ApplicationUser { get; set; }  
     }
 }
